@@ -162,7 +162,7 @@ Next, kfree it, with `ioctl_shoot`.
 Now, you can spray with any object it will ends in the chunk.
 The rest is straightfoward, using a "good" object, we leak kaslr, heap address and gain arbitrary read/write to patch creds, or using modprobe_path.
 
-The object choosen in the PoC [exploit.c](exploit/exploit.c) is tty_struct, since it's very simple. But any other techniques works also.
+The object choosen in the PoC [exploit.c](exploit/exploit.c) is tty_struct, since it's very simple. But any objects works as well.
 
 
 
