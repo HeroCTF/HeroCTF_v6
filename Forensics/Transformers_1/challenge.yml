@@ -1,0 +1,38 @@
+name: "Transformers #1"
+author: "Mallon"
+category: Forensics
+description: "
+A suspicious file has been found on one of your employee's workstations. He apparently retrieved the .iso file from an e-mail attachment...
+Find the file contained in the iso, identify the file type and calculate its sha256 fingerprint.
+<br><br>
+**/!\\ WARNING : The content in this challenge can harm your workstation, pls use a sandbox if needed.**
+<br><br>
+ZIP password: **InfecteD**<br>
+Hash : **3dfa0a81199f73797a455fd2625c7afc58cabda0a64cd9bc0826160eb1fd2983**<br><br>
+Format : **HERO{file-extention;sha256(file)}** (no case-sensitive)<br>
+Example : HERO{iso;e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855}<br>
+Author : **Mallon**"
+value: 0
+type: dynamic
+
+extra:
+    initial: 500
+    decay: 100
+    minimum: 50
+
+image: null
+host: null
+
+flags:
+    - {
+        type: "static",
+        content: "HERO{lnk;c3bb38b34c7dfbb1e9e9d588d77f32505184c79cd3628a70ee6df6061e128f3e}",
+        data: "case_insensitive",
+    }
+
+tags:
+    - easy
+files: 
+  - Suspicious_file.zip
+state: visible
+version: "0.1"

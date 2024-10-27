@@ -1,0 +1,34 @@
+name: "Feedback (Revenge)"
+author: "@everyone"
+category: Welcome
+description: "Thank you for taking part in the CTF, we sincerely hope you enjoyed it!
+<br><br>
+We've created a form to collect your feedbacks, a flag will be given at the end.
+<br><br>
+https://framaforms.org/heroctf-v6-feedback-1730044310
+<br><br>
+Format : **Hero{flag}**<br>
+Author : **@everyone**"
+value: 0
+type: dynamic
+
+extra:
+    initial: 500
+    decay: 100
+    minimum: 50
+
+image: null
+host: null
+
+flags:
+    - {
+        type: "static",
+        content: "Hero{38da5c9902edd8e6f2796cda60791e15}",
+        data: "case_insensitive",
+    }
+
+tags:
+    - very easy
+
+state: visible
+version: "0.1"

@@ -1,0 +1,6 @@
+services:
+  moo_machine:
+    build: ./challenge/
+    ports:
+        - "2222:22"
+    hostname: moo

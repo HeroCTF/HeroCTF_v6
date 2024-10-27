@@ -1,0 +1,171 @@
+services:
+
+  # ===== PRYZES ====
+  pryzes:
+    build:
+      context: ./PrYzes/PrYzes
+      dockerfile: Dockerfile
+    container_name: pryzes
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    mem_limit: 512m
+    cpus: 0.5
+    read_only: true
+    environment:
+      - FLAG=Hero{PrYzes_4r3_4m4z1ng!!!9371497139}
+    networks:
+      - pryzes_net
+
+  # ===== CACHE CACHE ====
+  cachecache_web:
+    build:
+      context: ./CacheCache/src/challenge
+      dockerfile: Dockerfile
+    container_name: cachecache_web
+    restart: unless-stopped
+    ports:
+      - "5100:8000"
+    mem_limit: 512m
+    cpus: 0.5
+    read_only: true
+    networks:
+      - cachecache_net
+
+  cachecache_bot:
+    build:
+      context: ./CacheCache/src/bot
+      dockerfile: Dockerfile
+    container_name: cachecache_bot
+    restart: unless-stopped
+    ports:
+      - "5101:55555"
+    environment:
+      - DOMAIN=cache-cache.heroctf.fr
+      - FLAG=HERO{c2d96111ae75c17f3f41a0f7b393ac50}
+    mem_limit: 1G
+    cpus: 1
+    read_only: false
+    networks:
+      - cachecache_net
+
+  # ===== UNDER CONSTRUCTION ====
+  underconstruction_nginx:
+    image: nginx:alpine
+    container_name: underconstruction_nginx
+    restart: unless-stopped
+    volumes:
+      - ./UnderConstruction/src/nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./UnderConstruction/src/nginx/certs:/etc/nginx/certs
+    ports:
+      - "5200:443"
+    mem_limit: 512m
+    cpus: 0.5
+    read_only: false
+    networks:
+      - underconstruction_net
+
+  underconstruction_web:
+    build: 
+      context: ./UnderConstruction/src/challenge/
+      dockerfile: Dockerfile
+      args:
+        - FLAG=HERO{decba0baaf8609d2ef72637c74de59c6}
+    container_name: underconstruction_web
+    restart: unless-stopped
+    # ports:
+    #   - "5200:8000"
+    mem_limit: 2G
+    cpus: 1
+    read_only: false
+    networks:
+      - underconstruction_net
+
+  underconstruction_bot:
+    build: ./UnderConstruction/src/bot/
+    container_name: underconstruction_bot
+    restart: unless-stopped
+    ports:
+      - "5201:55555"
+    environment:
+      - PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+      - FLAG=HERO{decba0baaf8609d2ef72637c74de59c6}
+    mem_limit: 1G
+    cpus: 1
+    read_only: false
+    networks:
+      - underconstruction_net
+
+  # ===== UNDER CONSTRUCTION REVENGE ====
+  underconstruction_revenge_nginx:
+    image: nginx:alpine
+    container_name: underconstruction_revenge_nginx
+    restart: unless-stopped
+    volumes:
+      - ./UnderConstruction_Revenge/src/nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./UnderConstruction_Revenge/src/nginx/certs:/etc/nginx/certs
+    ports:
+      - "5400:443"
+    mem_limit: 512m
+    cpus: 0.5
+    read_only: false
+    networks:
+      - underconstruction_rev_net
+
+  underconstruction_revenge_web:
+    build: 
+      context: ./UnderConstruction_Revenge/src/challenge/
+      dockerfile: Dockerfile
+      args:
+        - FLAG=HERO{ff692da4e0d215a3874dbf478c2ab1d5}
+    container_name: underconstruction_revenge_web
+    restart: unless-stopped
+    # ports:
+    #   - "5200:8000"
+    mem_limit: 2G
+    cpus: 1
+    read_only: false
+    networks:
+      - underconstruction_rev_net
+
+  underconstruction_revenge_bot:
+    build: ./UnderConstruction_Revenge/src/bot/
+    container_name: underconstruction_revenge_bot
+    restart: unless-stopped
+    ports:
+      - "5401:55555"
+    environment:
+      - PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+      - FLAG=HERO{ff692da4e0d215a3874dbf478c2ab1d5}
+    mem_limit: 1G
+    cpus: 1
+    read_only: false
+    networks:
+      - underconstruction_rev_net
+
+  # ===== SAMPLEHUB ====
+  samplehub:
+    build:
+      context: ./SampleHub/
+      dockerfile: Dockerfile
+    container_name: samplehub
+    restart: unless-stopped
+    ports:
+      - "5300:3000"
+    mem_limit: 512m
+    cpus: 0.5
+    read_only: true
+    networks:
+      - samplehub_net
+
+networks:
+  pryzes_net:
+    driver: bridge
+  cachecache_net:
+    driver: bridge
+  underconstruction_net:
+    driver: bridge
+  underconstruction_rev_net:
+    driver: bridge
+  samplehub_net:
+    driver: bridge

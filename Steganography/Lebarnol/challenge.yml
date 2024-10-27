@@ -1,0 +1,36 @@
+name: "Lebarnol"
+author: "Thibz"
+category: Steganography
+description: "A message is hidden in this very interesting text about the Indonesian language. 
+
+Good luck!<br><br> 
+
+Format : **Hero{}**<br> 
+Author : **Thibz**"
+
+value: 0
+type: dynamic
+
+extra:
+    initial: 500
+    decay: 100
+    minimum: 50
+
+image: null
+host: null
+
+flags:
+    - {
+        type: "static",
+        content: "Hero{Z3R0_W1D7H_S73G4N0GR4PHY_??}",
+        data: "case_insensitive",
+    }
+
+tags:
+    - easy 
+
+files:
+    - flag.txt
+
+state: visible
+version: "0.1"

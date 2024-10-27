@@ -1,0 +1,333 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "forest_v2.tmj",
+    "expandedProjectPaths": [
+        "."
+    ],
+    "file.lastUsedOpenFilter": "All Files (*)",
+    "fileStates": {
+        "": {
+            "dynamicWrapping": false,
+            "scaleInDock": 0.3576,
+            "scaleInEditor": 1
+        },
+        "#Tilemap_Elevation": {
+            "scaleInEditor": 1
+        },
+        "/Users/jeje/Desktop/Hero/client_v005/map0.tmj": {
+            "scale": 0.10370833333333332,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 2405.785456006429,
+                "y": 1600.6428284451588
+            }
+        },
+        "/Users/jeje/Desktop/Hero/client_v005/water_rocks_03.tsx": {
+            "scaleInDock": 1
+        },
+        "Foam.tsx": {
+            "scaleInDock": 1
+        },
+        "Shadows.tsx": {
+            "scaleInDock": 1
+        },
+        "Water.tsx": {
+            "scaleInDock": 1
+        },
+        "bridges.tsx": {
+            "scaleInDock": 1
+        },
+        "forest_map.tmj": {
+            "scale": 0.35,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 2398.5714285714284,
+                "y": 1148.5714285714284
+            }
+        },
+        "forest_map.tmj#../00_forest/Tilemap_Flat": {
+            "scaleInDock": 1
+        },
+        "forest_map.tmj#../00_forest/Tilemap_Flat.png": {
+            "scaleInDock": 1
+        },
+        "forest_map.tmj#ASSETS AND TAILSET2": {
+            "scaleInDock": 0.7406,
+            "scaleInEditor": 1
+        },
+        "forest_map.tmj#Bone": {
+            "scaleInDock": 1
+        },
+        "forest_map.tmj#Bridge_All": {
+            "scaleInDock": 1
+        },
+        "forest_map.tmj#Bush_big": {
+            "scaleInDock": 1
+        },
+        "forest_map.tmj#Castle_Blue": {
+            "scaleInDock": 1
+        },
+        "forest_map.tmj#Danger": {
+            "scaleInDock": 1
+        },
+        "forest_map.tmj#Foam": {
+            "scaleInDock": 1
+        },
+        "forest_map.tmj#House_Blue": {
+            "scaleInDock": 1
+        },
+        "forest_map.tmj#House_Destroyed": {
+            "scaleInDock": 1
+        },
+        "forest_map.tmj#Mushroom_big": {
+            "scaleInDock": 1
+        },
+        "forest_map.tmj#Pumpkin": {
+            "scaleInDock": 1
+        },
+        "forest_map.tmj#Rock_big": {
+            "scaleInDock": 1
+        },
+        "forest_map.tmj#Rock_mid": {
+            "scaleInDock": 1
+        },
+        "forest_map.tmj#TX Props": {
+            "scaleInDock": 0.8368
+        },
+        "forest_map.tmj#TX Struct": {
+            "scaleInDock": 1
+        },
+        "forest_map.tmj#TX Tileset Wall": {
+            "scaleInDock": 1
+        },
+        "forest_map.tmj#Tilemap_Elevation": {
+            "scaleInDock": 1
+        },
+        "forest_map.tmj#Tilemap_Flat": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1
+        },
+        "forest_map.tmj#Tilemap_Flat_dark": {
+            "dynamicWrapping": false,
+            "scaleInEditor": 1
+        },
+        "forest_map.tmj#Tilemap_Flat_darker": {
+            "scaleInDock": 1
+        },
+        "forest_map.tmj#Tower_Blue": {
+            "scaleInDock": 1
+        },
+        "forest_map.tmj#Tower_Destroyed": {
+            "scaleInDock": 1
+        },
+        "forest_map.tmj#Tree": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "forest_map.tmj#Warrior_Yellow": {
+            "scaleInDock": 1
+        },
+        "forest_map.tmj#Water": {
+            "scaleInDock": 1
+        },
+        "forest_map.tmj#ferris": {
+            "dynamicWrapping": true,
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "forest_map.tmj#mushroom_mid": {
+            "scaleInDock": 1
+        },
+        "forest_map.tmj#scarecrow": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1
+        },
+        "forest_map.tmj#xd": {
+            "dynamicWrapping": true,
+            "scaleInDock": 1
+        },
+        "forest_map.tmx": {
+            "scale": 0.51,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 322.5490196078431,
+                "y": 271.56862745098044
+            }
+        },
+        "forest_map.tmx#terrain_flat": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1
+        },
+        "forest_v2.tmj": {
+            "scale": 0.4211,
+            "selectedLayer": 7,
+            "viewCenter": {
+                "x": 3480.170980764664,
+                "y": 1507.95535502256
+            }
+        },
+        "forest_v2.tmj#ASSETS AND TAILSET": {
+            "scaleInDock": 0.8433
+        },
+        "forest_v2.tmj#Bridge_All": {
+            "scaleInDock": 1
+        },
+        "forest_v2.tmj#Bush_big": {
+            "scaleInDock": 1
+        },
+        "forest_v2.tmj#Castle_Blue": {
+            "scaleInDock": 1
+        },
+        "forest_v2.tmj#Danger": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1
+        },
+        "forest_v2.tmj#Foam": {
+            "dynamicWrapping": false,
+            "scaleInDock": 0.8844,
+            "scaleInEditor": 1
+        },
+        "forest_v2.tmj#House_Blue": {
+            "scaleInDock": 1
+        },
+        "forest_v2.tmj#House_Destroyed": {
+            "scaleInDock": 1
+        },
+        "forest_v2.tmj#Mushroom_big": {
+            "scaleInDock": 1
+        },
+        "forest_v2.tmj#Objects": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1
+        },
+        "forest_v2.tmj#Pumpkin": {
+            "scaleInDock": 1
+        },
+        "forest_v2.tmj#Rock_mid": {
+            "scaleInDock": 1
+        },
+        "forest_v2.tmj#Scarecrow": {
+            "scaleInDock": 1
+        },
+        "forest_v2.tmj#TX Props": {
+            "scaleInDock": 1
+        },
+        "forest_v2.tmj#TX Struct": {
+            "scaleInDock": 1
+        },
+        "forest_v2.tmj#TX Tileset Wall": {
+            "scaleInDock": 1
+        },
+        "forest_v2.tmj#Tilemap_Elevation": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1
+        },
+        "forest_v2.tmj#Tilemap_Flat": {
+            "scaleInDock": 1
+        },
+        "forest_v2.tmj#Tilesets and props Demo": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1
+        },
+        "forest_v2.tmj#Torch_Blue": {
+            "dynamicWrapping": true,
+            "scaleInDock": 1,
+            "scaleInEditor": 0.5494
+        },
+        "forest_v2.tmj#Torch_Blue_Damaged": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1
+        },
+        "forest_v2.tmj#Torch_Red": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1
+        },
+        "forest_v2.tmj#Torch_Red_Damaged": {
+            "scaleInDock": 1
+        },
+        "forest_v2.tmj#Torch_Red_damaged": {
+            "scaleInEditor": 1
+        },
+        "forest_v2.tmj#Tower_Destroyed": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1
+        },
+        "forest_v2.tmj#Tree": {
+            "scaleInDock": 1
+        },
+        "forest_v2.tmj#Warrior_Yellow": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "forest_v2.tmj#Warrior_Yellow2": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "forest_v2.tmj#Water": {
+            "scaleInDock": 1
+        },
+        "forest_v2.tmj#Wizar": {
+            "scaleInDock": 1
+        },
+        "forest_v2.tmj#Wizar_Damaged": {
+            "scaleInDock": 1
+        },
+        "forest_v2.tmj#character": {
+            "dynamicWrapping": true,
+            "scaleInEditor": 1
+        },
+        "forest_v2.tmj#chest_png": {
+            "scaleInEditor": 1
+        },
+        "forest_v2.tmj#d": {
+            "dynamicWrapping": true,
+            "scaleInEditor": 1
+        },
+        "forest_v2.tmj#thepack": {
+            "scaleInDock": 0.5155
+        },
+        "forest_v2.tmj#tileset-grassland-props": {
+            "scaleInDock": 1
+        },
+        "houses.tsx": {
+            "scaleInDock": 1
+        },
+        "objects.tsx": {
+            "scaleInDock": 1
+        },
+        "terrain_flat.tsx": {
+            "scaleInDock": 1
+        },
+        "trees.tsx": {
+            "scaleInDock": 1
+        }
+    },
+    "last.imagePath": "/Users/jeje/Desktop/Hero/00_forest",
+    "map.height": 100,
+    "map.lastUsedFormat": "json",
+    "map.width": 150,
+    "openFiles": [
+        "forest_map.tmj",
+        "forest_v2.tmj"
+    ],
+    "project": "forest_map.tiled-project",
+    "property.type": "color",
+    "recentFiles": [
+        "forest_map.tmj",
+        "forest_v2.tmj",
+        "/Users/jeje/Desktop/Hero/client_v005/map0.tmj",
+        "forest_map.tmx"
+    ],
+    "tileset.embedInMap": true,
+    "tileset.margin": 0,
+    "tileset.tileSize": {
+        "height": 32,
+        "width": 32
+    },
+    "tileset.type": 0
+}

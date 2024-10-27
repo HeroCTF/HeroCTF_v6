@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  web:
+    build: 
+      context: ./src/
+    ports:
+      - "8000:80"
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 1G

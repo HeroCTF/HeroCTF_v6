@@ -1,0 +1,58 @@
+services:
+
+  # ===== AUTOINFECTOR 1 ====
+  autoinfector_1:
+    build:
+      context: ./AutoInfector_1/
+      dockerfile: Dockerfile
+    container_name: autoinfector_1
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    mem_limit: 512m
+    cpus: 0.5
+    read_only: false
+    networks:
+      - autoinfector_1_net
+
+  # ===== AUTOINFECTOR 2 ====
+  autoinfector_2:
+    build:
+      context: ./AutoInfector_2/
+      dockerfile: Dockerfile
+    container_name: autoinfector_2
+    restart: unless-stopped
+    ports:
+      - "4444:5000"
+    mem_limit: 512m
+    cpus: 0.5
+    read_only: true
+    environment:
+      - FLAG_3=Hero{4re_y0U_t4lking_with_m3????4444}
+    networks:
+      - autoinfector_2_net
+
+  # ===== LANDSCAPE ====
+  landscape:
+    build:
+      context: ./Landscape/landscape
+      dockerfile: Dockerfile
+    container_name: landscape
+    restart: unless-stopped
+    ports:
+      - "4000:1337"
+    mem_limit: 512m
+    cpus: 0.5
+    read_only: true
+    environment:
+      - FLAG=Hero{L4nd5c4p3_0f_Sky5cr4p3r5}
+    networks:
+      - landscape_net
+
+networks:
+  landscape_net:
+    driver: bridge
+  autoinfector_1_net:
+    driver: bridge
+  autoinfector_2_net:
+    driver: bridge

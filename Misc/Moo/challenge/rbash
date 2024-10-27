@@ -1,0 +1,4 @@
+#!/bin/bash -l
+export PATH=/usr/local/rbin
+/usr/local/rbin/cowsay -W 57 "Welcome dear CTF player! You can read the flag with: /bin/sudo /bin/cat /flag.txt. Or can you?..." 2>/dev/null
+exec /bin/bash -r "$@"

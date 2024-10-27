@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  underconstruction_web:
+    build: 
+      context: ./src/challenge/
+      args:
+        - FLAG=HERO{decba0baaf8609d2ef72637c74de59c6}
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 1G
+  underconstruction_bot:
+    build: ./src/bot/
+    ports:
+      - "55555:55555"
+    environment:
+      - PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+      - FLAG=HERO{decba0baaf8609d2ef72637c74de59c6}
+    restart: unless-stopped
+    cap_drop:
+      - all
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 1G
+    ulimits:
+      nofile:   
+        soft: 1024
+        hard: 1024

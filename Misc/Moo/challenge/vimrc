@@ -1,0 +1,54 @@
+" Basic restricted Vim setup
+set backspace=indent,eol,start
+
+" Disable other modes and commands to ensure no keys work except i, :w, and :q
+nnoremap v <Nop>
+nnoremap V <Nop>
+nnoremap <C-v> <Nop>
+
+" Disable executing shell commands
+cmap ! <Nop>
+cmap : <Nop>
+
+" Disable setting options
+cmap set <Nop>
+
+" Disable starting new files or opening existing ones
+cmap e <Nop>
+cmap E <Nop>
+cmap edit <Nop>
+cmap enew <Nop>
+cmap find <Nop>
+cmap gf <Nop>
+
+" Disable all sorts of quitting without saving
+cmap q! <Nop>
+cmap cq <Nop>
+cmap quit! <Nop>
+
+" Disable movement between buffers
+cmap bn <Nop>
+cmap bp <Nop>
+cmap bnext <Nop>
+cmap bprev <Nop>
+cmap bd <Nop>
+
+" Disable splits and tabs
+cmap split <Nop>
+cmap vsplit <Nop>
+cmap new <Nop>
+cmap vnew <Nop>
+cmap tabnew <Nop>
+cmap tabe <Nop>
+
+" Re-allow :w and :q explicitly
+cmap :w :w
+cmap :q :q
+
+" Allow entering insert mode
+nnoremap i i
+nnoremap I I
+nnoremap a a
+nnoremap A A
+nnoremap o o
+nnoremap O O

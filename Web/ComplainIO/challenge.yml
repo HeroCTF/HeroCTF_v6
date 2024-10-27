@@ -1,0 +1,35 @@
+name: "ComplainIO"
+author: "Worty"
+category: Web
+description: "As a French person, we love to complain, so I've created a platform to automatically create complaint templates - we can't stop progress!
+<br><br>
+> Deploy on [deploy.heroctf.fr](https://deploy.heroctf.fr/)<br>
+<br>
+Format : **Hero{flag}**<br>
+Author : **Worty**"
+value: 0
+type: dynamic
+
+extra:
+    initial: 500
+    decay: 100
+    minimum: 50
+
+image: null
+host: null
+
+flags:
+    - {
+        type: "static",
+        content: "HERO{m0r3_p0llut10n_pl34s3_456144e3cc5ed95803a2f81baaf3c4bb}",
+        data: "case_insensitive",
+    }
+
+tags:
+    - hard
+
+files:
+    - dist/complainio.tar.xz
+
+state: visible
+version: "0.1"

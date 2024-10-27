@@ -1,0 +1,37 @@
+name: "LSD#3"
+author: "Thibz"
+category: Steganography
+description: "Don't try to throw random tools at this poor image. Go back to the basics and learn the detection techniques.
+
+Good luck!<br><br> 
+
+Format : **Hero{}**<br> 
+Author : **Thibz**"
+
+value: 0
+type: dynamic
+
+extra:
+    initial: 500
+    decay: 100
+    minimum: 50
+
+image: null
+host: null
+
+flags:
+    - {
+        type: "static",
+        content: "Hero{L5B_D14G0N4L3}",
+        data: "case_insensitive",
+    }
+
+tags:
+    - medium 
+    - prog
+
+files:
+    - secret.png
+
+state: visible
+version: "0.1"

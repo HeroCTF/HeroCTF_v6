@@ -1,0 +1,39 @@
+name: "Giam v0.04"
+author: iHuggsy
+category: GameHacking
+description: "Patch notes : server sided some features to avoid HACKERS<br>
+Finish the game in order to get the flag.<br><br>At the binary location, create a file called 'realm' containing the ip and the port of the remote server deployed from the deployer.<br>Example: 127.0.0.1:4444<br><br> > Deploy on [deploy.heroctf.fr](https://deploy.heroctf.fr/)<br><br>
+Format : **Hero{flag}**<br> Author : **iHuggsy**"
+value: 0
+type: dynamic
+
+extra:
+    initial: 500
+    decay: 100
+    minimum: 50
+
+image: null
+host: null
+
+flags:
+    - {
+        type: "static",
+        content: "Hero{average_game_enjoyer_be_like}",
+        data: "case_insensitive",
+    }
+
+tags:
+    - hard
+    - gamehacking
+    - reverse 
+
+files:
+    - client/target/clientv004.exe
+
+requirements:
+    - "Giam v0.01"
+    - "Giam v0.02"
+    - "Giam v0.03"
+
+state: visible
+version: "0.1"

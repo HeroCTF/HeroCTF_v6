@@ -1,0 +1,24 @@
+name: Syntax check on 'challenge.yml' files
+
+on:
+  push:
+    branches:
+      - "main"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo content
+        uses: actions/checkout@v4
+
+      - name: Setup python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: python3 -m pip install PyYAML
+
+      - name: Run the syntax checker
+        run: python3 .github/yaml_chall_checker.py $GITHUB_WORKSPACE

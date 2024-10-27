@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    read_only: true
+    restart: unless-stopped
+    cap_drop:
+      - all
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 1G

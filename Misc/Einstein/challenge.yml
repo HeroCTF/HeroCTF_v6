@@ -1,0 +1,38 @@
+---
+name: Einstein
+author: Log_s
+category: Misc
+description: "1. The laws of physics are the same for all observers in any inertial frame of reference relative to one another (principle of relativity).<br>
+2. The speed of light in vacuum is the same for all observers, regardless of their relative motion or of the motion of the light source.
+<br>
+Source: [https://en.wikipedia.org/wiki/Theory_of_relativity](https://en.wikipedia.org/wiki/Theory_of_relativity)<br>
+<br>
+Credentials: `user:password`<br>
+<br>
+> Deploy on [deploy.heroctf.fr](https://deploy.heroctf.fr/)<br>
+<br>
+Format : **Hero{flag}**<br>
+Author : **Log_s**"
+value: null
+type: dynamic
+extra:
+    initial: 500
+    decay: 100
+    minimum: 50
+
+image: null
+host: null
+
+flags:
+    - {
+        type: "static",
+        content: "Hero{th30ry_of_r3l4tiv3_p4th5}",
+        data: "case_insensitive",
+    }
+
+tags:
+    - very easy
+    - system
+
+state: visible 
+version: "0.1"

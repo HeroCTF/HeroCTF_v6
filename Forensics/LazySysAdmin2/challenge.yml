@@ -1,0 +1,36 @@
+name: "LazySysAdmin #2"
+author: "Malon"
+category: Forensics
+description: "You have identified the malicious load, it seems, that a script was executed before the computer turns off, you made a copy of the disk and you start investigating to understand the \"extent of the damage\"
+<br><br>
+URL: **https://mega.nz/file/TNp11ZTb#yuC0rnLYZIMkcdElRXFQvbCzKjnIUZH7JRjaM4g4NZQ** <br><br>
+Fingerprint (sha256):
+
+Format : **HERO{flag}**<br>
+Author : **Mallon**"
+value: 0
+type: dynamic
+
+extra:
+    initial: 500
+    decay: 100
+    minimum: 50
+
+image: null
+host: null
+
+flags:
+    - {
+        type: "static",
+        content: "HERO{AlwaYs-Ch3ck_What_u-C0Py-P4ste}",
+        data: "case_insensitive",
+    }
+
+tags:
+    - medium
+    
+requirements:
+    - "LazySysAdmin #1"
+
+state: hidden
+version: "0.1"

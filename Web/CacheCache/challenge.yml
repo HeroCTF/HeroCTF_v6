@@ -1,0 +1,39 @@
+name: "Cache Cache"
+author: "Mizu"
+category: Web
+description: "I heard about an old tricks related to CORS that doesn't include 'Access-Control-Allow-Credentials', but I can't remember how it works. Can you help me?
+
+<br><br>
+Tip: Using other web challenges is required to solve this one :)
+
+<br><br>
+URL : http://cache-cache.heroctf.fr:5100/<br>
+BOT : `echo http://URL | nc cache-cache.heroctf.fr 5101`<br>
+Format : **Hero{flag}**<br>
+Author : **Mizu**"
+value: 0
+type: dynamic
+
+extra:
+    initial: 500
+    decay: 100
+    minimum: 50
+
+image: null
+host: null
+
+flags:
+    - {
+        type: "static",
+        content: "HERO{c2d96111ae75c17f3f41a0f7b393ac50}",
+        data: "case_insensitive",
+    }
+
+tags:
+    - medium
+
+files:
+    - dist/cache-cache.tar.xz
+
+state: visible
+version: "0.1"

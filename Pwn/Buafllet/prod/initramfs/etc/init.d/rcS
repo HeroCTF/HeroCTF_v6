@@ -1,0 +1,40 @@
+#!/bin/sh
+
+mkdir -p /proc && mount -t proc none /proc
+mkdir -p /dev  && mount -t devtmpfs devtmpfs /dev
+mkdir -p /tmp  && mount -t tmpfs tmpfs /tmp
+mkdir -p /sys && mount -t sysfs none /sys
+mkdir -p /dev/pts && mount -t devpts /dev/ptmx /dev/pts
+
+echo 1 > /proc/sys/kernel/kptr_restrict
+echo 1 > /proc/sys/kernel/dmesg_restrict
+chmod 400 /proc/kallsyms
+
+chown 0:0 /flag.txt
+chmod 400 /flag.txt
+
+chown 0:0 /
+chown -R 0:0 /bin
+chown -R 0:0 /etc
+chown -R 0:0 /sbin
+chown -R 0:0 /usr
+
+chmod 755 /etc
+chmod 755 /
+
+chmod -R 755 /bin /sbin /usr
+
+
+chattr +i /bin
+chattr +i /sbin
+chattr +i /etc
+chattr +i /usr
+
+
+chown 0:0 /initramfs.cpio.gz
+
+insmod /buafllet.ko
+chmod 666 /dev/buafllet
+
+mkdir /exploit
+mount -t 9p -o trans=virtio host0 /exploit

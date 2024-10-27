@@ -1,0 +1,6 @@
+[config]
+url = https://ctf.heroctf.fr/
+access_token = ctfd_ba540261e30641d81c02719e44bce5550dc07402f36af6a4debcce10908534cc
+
+[challenges]
+

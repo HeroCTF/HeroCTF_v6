@@ -1,0 +1,38 @@
+.grid {
+    display: grid;
+    gap: 1px;
+    width: 100%;
+    height: 75vh; /* Set a fixed height */
+}
+
+.cell {
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;  /* Required for absolute positioning of ant/sugar */
+}
+
+.ant, .sugar {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.ant {
+    z-index: 2;  /* Ant on top of sugar */
+}
+
+.sugar {
+    z-index: 1;  /* Sugar below ant */
+}
+
+#roundProgressBar {
+    width: 70%;
+}
+
+.CodeMirror { min-height: 100% }

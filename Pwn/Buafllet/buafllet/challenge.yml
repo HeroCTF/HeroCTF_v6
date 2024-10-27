@@ -1,0 +1,45 @@
+name: "Buafllet"
+author: ghizmo
+category: Pwn
+description: "You have one bullet, use it wisely...
+<br><br>
+> Deploy on [deploy.heroctf.fr](https://deploy.heroctf.fr/)<br>
+<br>
+You will have two exposed ports, one for SSH and one for the challenge (TCP).<br>
+The `exploit/` folder in the SSH is shared with the QEMU inside the challenge, so you can upload your exploits more easily.<br>
+- SSH credentials: `player:heroctf`
+- Use netcat for QEMU
+<br>
+Format : **Hero{flag}**<br>
+Author : **ghizmo**"
+value: 0
+type: dynamic
+
+extra:
+    initial: 500
+    decay: 100
+    minimum: 50
+
+image: null
+host: null
+
+flags:
+    - {
+        type: "static",
+        content: "Hero{0neBu773t_To_R0Ot_Th3m_4LL192038_a8239320132489328912302839132421}",
+        data: "case_insensitive",
+    }
+
+tags:
+    - very hard
+    - kernel
+
+files:
+    - buafllet.ko
+    - config
+    - Image
+    - initramfs.cpio.gz
+    - run.sh
+
+state: visible 
+version: "0.1"

@@ -1,0 +1,33 @@
+name: "AutoInfector 2/3"
+author: "xanhacks"
+category: Reverse
+description: "With the sample in hand, it's time for analysis! You'll encounter a geofencing restriction on the command & control server. Attempt to circumvent this barrier to access the malware's second stage.
+<br><br>
+Format : **Hero{flag}**<br>
+Author : **xanhacks**"
+value: 0
+type: dynamic
+
+extra:
+    initial: 500
+    decay: 100
+    minimum: 50
+
+image: null
+host: null
+
+flags:
+    - {
+        type: "static",
+        content: "Hero{Geof3nc1ng_R3str1ct10n5_4r3_n0t_3n0ugh}",
+        data: "case_insensitive",
+    }
+
+tags:
+    - easy
+
+requirements:
+    - "AutoInfector 1/3"
+
+state: visible
+version: "0.1"

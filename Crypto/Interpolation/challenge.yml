@@ -1,0 +1,33 @@
+---
+name: Interpolation
+author: Alol
+category: Crypto
+description: "Has missing data really ever stopped anyone ?<br><br>
+Host : **nc crypto.heroctf.fr 9000**<br>
+Format : **Hero{flag}**<br>
+Author : **Alol**"
+value: null
+type: dynamic
+extra:
+    initial: 500
+    decay: 100
+    minimum: 50
+
+image: null
+host: null
+
+flags:
+    - {
+        type: "static",
+        content: "Hero{th3r3_4r3_tw0_typ35_0f_p30pl3_1n_th15_w0rld_th053_wh0_c4n_3xtr4p0l4t3_fr0m_1nc0mpl3t3_d474}",
+        data: "case_insensitive",
+    }
+
+tags:
+    - easy
+
+files:
+    - interpolation.zip
+
+state: visible
+version: "0.1"

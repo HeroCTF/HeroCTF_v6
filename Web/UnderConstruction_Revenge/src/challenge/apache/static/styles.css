@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+.construction-container {
+    text-align: center;
+}
+h1 {
+    font-size: 48px;
+    color: #333;
+}
+p {
+    font-size: 18px;
+    color: #777;
+}
+.icon {
+    font-size: 100px;
+    color: #ff9800;
+}

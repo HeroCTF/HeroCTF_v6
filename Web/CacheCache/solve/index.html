@@ -1,0 +1,9 @@
+<img src="https://cache-cache.heroctf.fr:5100/">
+<script>
+    setTimeout(() => {
+        fetch("https://cache-cache.heroctf.fr:5100/", {
+            method: "GET",
+            cache: "force-cache"
+        }).then(d => d.text()).then(console.log);
+    }, 500);
+</script>

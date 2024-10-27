@@ -1,0 +1,33 @@
+---
+name: Halloween
+author: Alol
+category: Crypto
+description: "Boo! Do you believe in ghosts ? I sure don't.<br><br>
+Host : **nc crypto.heroctf.fr 9001**<br>
+Format : **Hero{flag}**<br>
+Author : **Alol**"
+value: null
+type: dynamic
+extra:
+    initial: 500
+    decay: 100
+    minimum: 50
+
+image: null
+host: null
+
+flags:
+    - {
+        type: "static",
+        content: "Hero{5p00ky_5c4ry_fl4w3d_cryp70_1mpl3m3n74710ns_53nd_5h1v3r5_d0wn_y0ur_5p1n3}",
+        data: "case_insensitive",
+    }
+
+tags:
+    - hard
+
+files:
+    - halloween.zip
+
+state: visible
+version: "0.1"

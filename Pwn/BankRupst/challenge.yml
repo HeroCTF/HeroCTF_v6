@@ -1,0 +1,35 @@
+name: "BankRupst"
+author: ghizmo
+category: Pwn
+description: "BankRupst is a bank operating in bankruptcy where no laws are applicable.
+<br>
+nc pwn.heroctf.fr 6001
+Format : **Hero{flag}**<br>
+Author : **ghizmo**"
+value: 0
+type: dynamic
+
+extra:
+    initial: 500
+    decay: 100
+    minimum: 50
+
+image: null
+host: null
+
+flags:
+    - {
+        type: "static",
+        content: "Hero{B4nkk_Rupst3dDd!!1x33x7}",
+        data: "case_insensitive",
+    }
+
+tags:
+    - easy 
+
+files:
+    - bankrupst
+    - bankrupst.rs
+
+state: visible
+version: "0.1"

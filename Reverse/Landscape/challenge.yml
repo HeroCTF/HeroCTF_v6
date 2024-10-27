@@ -1,0 +1,37 @@
+name: "Landscape"
+author: "xanhacks"
+category: Reverse
+description: "You just discovered a new game, but it seems the developer omitted to include a user interface. Although it responds to player inputs, there's no concluding message or feedback.
+<br><br>
+To understand the game's mechanics and solve it, reverse engineer the binary.
+<br><br>
+You can reverse the challenge locally and validate the flag on :<br>
+nc reverse.heroctf.fr 4000
+Format : **Hero{flag}**<br>
+Author : **xanhacks**"
+value: 0
+type: dynamic
+
+extra:
+    initial: 500
+    decay: 100
+    minimum: 50
+
+image: null
+host: null
+
+flags:
+    - {
+        type: "static",
+        content: "Hero{L4nd5c4p3_0f_Sky5cr4p3r5}",
+        data: "case_insensitive",
+    }
+
+tags:
+    - medium 
+
+files:
+    - landscape.zip
+
+state: visible
+version: "0.1"

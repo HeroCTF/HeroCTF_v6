@@ -1,0 +1,41 @@
+name: "Transformers #2"
+author: "Mallon"
+category: Forensics
+description: "
+Can you identify to wich malware dropper the iso file is related to ? Also, it looks like the dropper is contacting a remote ressource, can you find the domain name the dropper is trying to reach ? **[TLP:GREEN/PAP:AMBER]**
+<br><br>
+**/!\\ WARNING : The content in this challenge can harm your workstation, pls use a sandbox if needed.**
+<br><br>
+**ZIP password**: InfecteD
+<br><br>
+Format : HERO{Dropper Name;domain} (no case-sensitive)<br>
+Example : HERO{Dropper;abcd.ef}<br>
+Author : **Mallon**"
+value: 0
+type: dynamic
+
+extra:
+    initial: 500
+    decay: 100
+    minimum: 50
+
+image: null
+host: null
+
+flags:
+    - {
+        type: "static",
+        content: "HERO{Bumblebee;meeronixt.com}",
+        data: "case_insensitive",
+    }
+
+tags:
+    - medium
+    - cti
+files:
+  - Suspicious_file.zip
+
+requirements:
+    - "Transformers #1"
+state: visible
+version: "0.1"

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2024-09-13T13:42:21+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/tesla_hacking/</loc>
+    <lastmod>2024-09-13T13:42:21+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2024-09-13T13:42:21+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/free_movie_dl/</loc>
+    <lastmod>2024-09-13T13:41:37+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/more-ram-for-free/</loc>
+    <lastmod>2022-09-13T12:14:17+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+  </url>
+</urlset>

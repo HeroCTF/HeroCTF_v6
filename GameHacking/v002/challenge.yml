@@ -1,0 +1,37 @@
+name: "Giam v0.02"
+author: iHuggsy
+category: GameHacking
+description: "Patch notes : added an online feature !<br> Finish the game in less than 30s in order to get the flag.<br><br>At the binary location, create a file called 'realm' containing the ip and the port of the remote server deployed from the deployer.<br>Example: 127.0.0.1:4444<br><br> > Deploy on [deploy.heroctf.fr](https://deploy.heroctf.fr/)<br><br>
+Format : **Hero{flag}**<br> Author : **iHuggsy**"
+value: 0
+type: dynamic
+
+extra:
+    initial: 500
+    decay: 100
+    minimum: 50
+
+image: null
+host: null
+
+flags:
+    - {
+        type: "static",
+        content: "Hero{brok_da_giams_serva}",
+        data: "case_insensitive",
+    }
+
+tags:
+    - easy
+    - gamehacking
+    - reverse 
+
+files:
+    - client/target/clientv002.exe
+
+requirements:
+    - "Giam v0.01"
+    
+
+state: visible
+version: "0.1"

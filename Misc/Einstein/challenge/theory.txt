@@ -1,0 +1,35 @@
+Before Einstein, astronomers (for the most part) understood the universe in terms of three laws of motion presented by Isaac Newton in 1686. These three laws are: 
+
+Objects in motion or at rest remain in the same state unless an external force imposes change. This is also known as the concept of inertia.
+The force acting on an object is equal to the mass of the object multiplied by its acceleration. In other words, you can calculate how much force it takes to move objects with various masses at different speeds.
+For every action, there is an equal and opposite reaction.
+Newton's laws proved valid in nearly every application in physics, according to Encyclopedia Britannica. They formed the basis for our understanding of mechanics and gravity. 
+
+But some things couldn't be explained by Newton's work: For example, light. 
+
+To shoehorn the odd behavior of light into Newton's framework for physics scientists in the 1800s supposed that light must be transmitted through some medium, which they called the "luminiferous ether." That hypothetical ether had to be rigid enough to transfer light waves like a guitar string vibrates with sound, but also completely undetectable in the movements of planets and stars. 
+
+That was a tall order. Researchers set about trying to detect that mysterious ether, hoping to understand it better. In 1887, wrote astrophysicist Ethan Siegal in the Forbes science blog, Starts With a Bang, physicist Albert A. Michelson and chemist Edward Morley calculated how Earth's motion through the ether affected how the speed of light is measured, and unexpectedly found that the speed of light is the same no matter what Earth's motion is. 
+
+If the speed of light didn't change despite the Earth's movement through the ether, they concluded, there must be no such thing as ether to begin with: Light in space moved through a vacuum. 
+
+That meant it couldn't be explained by classical mechanics. Physics needed a new paradigm.
+
+According to Einstein, in his 1949 book "Autobiographical Notes" (Open Court, 1999, Centennial Edition), the budding physicist began questioning the behavior of light when he was just 16 years old. In a thought experiment as a teenager, he wrote, he imagined chasing a beam of light.
+
+Classical physics would imply that as the imaginary Einstein sped up to catch the light, the light wave would eventually come to a relative speed of zero — the man and the light would be moving at speed together, and he could see light as a frozen electromagnetic field. But, Einstein wrote, this contradicted work by another scientist, James Clerk Maxwell, whose equations required that electromagnetic waves always move at the same speed in a vacuum: 186,282 miles per second (300,000 kilometers per second). 
+
+Philosopher of physics John D. Norton challenged Einstein's story in his book "Einstein for Everyone" (Nullarbor Press, 2007), in part because as a 16-year-old, Einstein wouldn't yet have encountered Maxwell's equations. But because it appeared in Einstein's own memoir, the anecdote is still widely accepted.
+
+If a person could, theoretically, catch up to a beam of light and see it frozen relative to their own motion, would physics as a whole have to change depending on a person's speed, and their vantage point? Instead, Einstein recounted, he sought a unified theory that would make the rules of physics the same for everyone, everywhere, all the time. 
+
+This, wrote the physicist, led to his eventual musings on the theory of special relativity, which he broke down into another thought experiment: A person is standing next to a train track comparing observations of a lightning storm with a person inside the train. And because this is physics, of course, the train is moving nearly the speed of light.
+
+Einstein imagined the train at a point on the track equally between two trees. If a bolt of lightning hit both trees at the same time, the person beside the track would see simultaneous strikes. But because they are moving toward one lightning bolt and away from the other, the person on the train would see the bolt ahead of the train first, and the bolt behind the train later. 
+
+Einstein concluded that simultaneity is not absolute, or in other words, that simultaneous events as seen by one observer could occur at different times from the perspective of another. It's not lightspeed that changes, he realized, but time itself that is relative. Time moves differently for objects in motion than for objects at rest. Meanwhile, the speed of light, as observed by anyone anywhere in the universe, moving or not moving, is always the same.
+
+One of the most famous and well-known equations in all of human history, E = mc^2, translates to "energy is equal to mass times the speed of light squared." In other words, wrote PBS Nova, energy (E) and mass (m) are interchangeable. They are, in fact, just different forms of the same thing. 
+
+But they're not easily exchanged. Because the speed of light is already an enormous number, and the equation demands that it be multiplied by itself (or squared) to become even larger, a small amount of mass contains a huge amount of energy. For example, PBS Nova explained, "If you could turn every one of the atoms in a paper clip into pure energy — leaving no mass whatsoever — the paper clip would yield [the equivalent energy of] 18 kilotons of TNT. That's roughly the size of the bomb that destroyed Hiroshima in 1945."
+ 

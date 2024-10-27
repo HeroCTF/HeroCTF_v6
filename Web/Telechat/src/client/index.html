@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        #chat-container { display: flex; flex-direction: row; height: 100vh; }
+        #conversation-list { width: 30%; border-right: 1px solid #ccc; overflow-y: auto; }
+        #message-container { width: 70%; padding: 10px; }
+        .conversation { padding: 10px; border-bottom: 1px solid #ccc; cursor: pointer; }
+        .conversation:hover { background-color: #f0f0f0; }
+        #messages { height: 90%; overflow-y: auto; border: 1px solid #ccc; padding: 10px; }
+        #new-message { display: flex; margin-top: 10px; }
+        #new-message input { flex: 1; padding: 10px; border: 1px solid #ccc; }
+        #new-message button { padding: 10px; }
+        .menu-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        .menu-button:hover {
+            background-color: #0056b3;
+        }
+
+        .message-bubble {
+            max-width: 70%;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 15px;
+            font-size: 14px;
+            word-wrap: break-word;
+        }
+
+        .user-message {
+            background-color: #dcf8c6;
+            align-self: flex-end;
+            text-align: right;
+        }
+
+        .bot-message {
+            background-color: #f1f0f0;
+            align-self: flex-start;
+            text-align: left;
+        }
+
+        #messages {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .active-conversation {
+            background-color: #e0e0e0;
+            font-weight: bold;
+            color: #333;
+        }
+
+    </style>
+    <script src="socket.io.min.js"></script>
+    <script src="html2canvas.min.js"></script>
+</head>
+<body>
+    <div id="chat-container">
+        <div id="conversation-list"></div>
+        <div id="message-container" style="display: none;">
+            <div id="messages"></div>
+            <div id="new-message">
+                <input type="text" id="message-input" placeholder="Type your message here..." />
+                <button id="send-message">Send</button>
+            </div>
+        </div>
+    </div>
+    <script src="renderer.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+name: "Zipper"
+author: "Thibz"
+category: Steganography
+description: "Some data has been hidden somewhere in this archive, good luck finding it! 
+
+<br><br> 
+
+Format : **Hero{}**<br> 
+Author : **Thibz**"
+
+value: 0
+type: dynamic
+
+extra:
+    initial: 500
+    decay: 100
+    minimum: 50
+
+image: null
+host: null
+
+flags:
+    - {
+        type: "static",
+        content: "Hero{Dont_be_fooled_by_appearances}",
+        data: "case_insensitive",
+    }
+
+tags:
+    - easy 
+
+files:
+    - secretzip.zip
+
+state: visible
+version: "0.1"

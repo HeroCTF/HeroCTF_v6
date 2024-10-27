@@ -1,0 +1,9 @@
+[
+    { "filename": "sample.png", "extension": ".png", "description": "A Portable Network Graphics file that supports lossless data compression. Commonly used for web images and graphics." },
+    { "filename": "sample.jpg", "extension": ".jpg", "description": "A JPEG image file, widely used for digital photos and web graphics. It employs lossy compression to reduce file size." },
+    { "filename": "sample.pdf", "extension": ".pdf", "description": "A Portable Document Format file used for sharing documents while preserving formatting. It is viewable on any platform using a PDF reader." },
+    { "filename": "sample.doc", "extension": ".doc", "description": "A Microsoft Word document file format used for text documents. It supports rich formatting and can include images, tables, and other elements." },
+    { "filename": "sample.xls", "extension": ".xls", "description": "A Microsoft Excel spreadsheet file format that supports data analysis and calculation. It allows for complex formulas and data visualization." },
+    { "filename": "sample.mp3", "extension": ".mp3", "description": "An audio file format that uses lossy compression to reduce file size. It's commonly used for music and audio streaming." },
+    { "filename": "sample.mp4", "extension": ".mp4", "description": "A digital multimedia format commonly used for video files. It supports a wide range of codecs and is ideal for streaming." }
+]

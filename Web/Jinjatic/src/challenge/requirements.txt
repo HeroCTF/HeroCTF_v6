@@ -1,0 +1,4 @@
+flask
+pydantic
+pydantic[email]
+jinja2

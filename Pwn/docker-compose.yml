@@ -1,0 +1,42 @@
+
+services:
+
+  # ===== HEAPPIE ====
+  heappie:
+    build:
+      context: Heappie/prod/
+      dockerfile: Dockerfile
+    container_name: heappie
+    restart: unless-stopped
+    environment:
+      - LISTEN_PORT=6000
+    ports:
+      - "6000:6000"
+    mem_limit: 512m
+    cpus: 0.5
+    read_only: true
+    networks:
+      - heappie_net
+
+  # ===== BANKRUPST ====
+  bankrupst:
+    build:
+      context: BankRupst/
+      dockerfile: Dockerfile
+    container_name: bankrupst
+    restart: unless-stopped
+    environment:
+      - LISTEN_PORT=6001
+    ports:
+      - "6001:6001"
+    mem_limit: 512m
+    cpus: 0.5
+    read_only: true
+    networks:
+      - bankrupst_net
+
+networks:
+  heappie_net:
+    driver: bridge
+  bankrupst_net:
+    driver: bridge

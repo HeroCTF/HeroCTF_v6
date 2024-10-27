@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  web:
+    build: ./src/challenge
+    ports:
+      - "8000:8000"
+    read_only: true
+    restart: unless-stopped
+    cap_drop:
+      - all
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 1G
+  bot:
+    build: ./src/bot
+    ports:
+      - "55555:55555"
+    environment:
+      - DOMAIN=cache-cache.heroctf.fr
+      - FLAG=HERO{c2d96111ae75c17f3f41a0f7b393ac50}
+    restart: unless-stopped
+    cap_drop:
+      - all
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 1G

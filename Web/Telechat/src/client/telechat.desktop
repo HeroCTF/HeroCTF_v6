@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=Telechat
+Comment=Telechat Application
+Exec=/telechat/Telechat %u
+Terminal=false
+Type=Application
+Categories=Utility;
+MimeType=x-scheme-handler/telechat;

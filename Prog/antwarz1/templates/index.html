@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Documentation</title>
+        <meta name="Antwars" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+
+        <div class="jumbotron text-center bg-primary text-white">
+            <h1 class="display-4">Welcome to Antwarz!</h1>
+            <p class="lead">Control your ant colony and defeat opponents in this programming challenge.</p>
+        </div>
+        
+        <div class="m-3">
+            <h1>Welcome to Antwars!</h1>
+            <div class="m-3">
+                <h2>Introduction</h2>
+                    <div class="m-3">
+                        <p>
+                            Welcome to antwars! In this challenge, you will have to create bots to control an ant colony and defeat your opponent.
+                            <br>
+                            If you are not familiar with certain algorithms and/or datastructures, this challenges could be time consuming. If you are here for a pure cybersecurity CTF experience, you might want to check out other challenges.
+                            If however you are not afraid of a little programming challenge, you have come to the right place.
+                            <br>
+                            You will first need to prove yourself by facing two of my own bots in order to deserve you first two flags. Once you have proved your are worthy of the Arena, you will be allowed to face other players!
+                            <br>
+                            Please make sure to report any security fault you might find, as it's not the goal of the challenge to exploit the platform. Your code is ran in a sandbox. If you find any python builtins missing that you require, please request it in a ticket.
+                        </p>
+                    </div>
+                <h2>Submissions</h2>
+                    <div class="m-3">
+                        <p>
+                            There are two types of submissions.
+                            <ol>
+                                <li><strong>Test submissions</strong>: A game submitted through this kind of submission can be reviewed afterwards, but does not win a flag in case of victory.</li>
+                                <li><strong>Submissions</strong>: It will run 15 games, in which at least 12 need to be won by the player. This will award the player a flag, and unlock the next arena (upon flag submission on the CTFd).</li>
+                            </ol>
+                            Please use the script provided to convert your code source to base64 (base64_code.py). The "EOF" is required.
+                        </p>
+                    </div>
+                <h2>Arenas</h2>
+                    <div class="m-3">
+                        <p>There are 3 arenas</p>
+                        <ol>
+                            <li><strong>Easy PVE</strong>: You will fight agains an easy bot from the HeroCTF.</li>
+                            <li><strong>Medium PVE</strong>: You will fight agains a medium bot from the HeroCTF.</li>
+                            <li><strong>PVP</strong>: You will fight agains the current arena champion. If you beat him, your bot will take it's place inside the arena. Current champions cannot submit new code until they are thrown off their throne.</li>
+                        </ol>
+                        <p>Submissions will stop 30min before the CTF's end.</p>
+                    </div>
+                <h2>PVP Scoring</h2>
+                    <div class="m-3">
+                        <p>
+                            The first player to win the <i>Medium PVE</i> arena will be the first PVP champion. Other players need to beat him to take his place.
+                            <br>
+                            Every 10 minutes <strong>P</strong> points will be awarded to the current champion.
+                            <br>
+                            <strong>P</strong> will start at 1, when the first champion enters the PVP arena. Every half hour its value will double.
+                            <br>
+                            10min before the CTF's end, scoring will stop, and the team with the most points will be awarded a flag worth 10 points. It might not be much, but it could mean the different between a second or first place ;)
+                        </p>
+                    </div>
+                <h2>Game rules</h2>
+                    <div class="m-3">
+                        <h3>Goal</h3>
+                        <div class="m-3">
+                            <p>
+                                In this game, two ant colonies are battling for sugar. The goal is to end up with a larger sugar reserve than the opponent. The game ends when all the sugar has been collected, if the maximum number of rounds has been reached or if any player makes an illegal move.
+                            </p>
+                        </div>
+                        <h3>Grid</h3>
+                        <div class="m-3">
+                            <p>
+                                The grid is a square of random size, between 8x8 and 24x24 included. Your base is composed of all squares on your border of the square (column at index 0).
+                            </p>
+                        </div>
+                        <h3>Your turn</h3>
+                        <div class="m-3">
+                            <p>
+                                Each round, the players are both provided with:
+                                <ul>
+                                    <li>A list of positions of their own ants</li>
+                                    <li>A list of positions of their own ants one round ago</li>
+                                    <li>A list of positions of the opponent's ants</li>
+                                    <li>A list of positions of the opponent's ants one round ago</li>
+                                    <li>A list of positions of discovered sugar cubes and the remaining suger on them</li>
+                                    <li>The total amount of sugar to begin with</li>
+                                    <li>The grid size</li>
+                                    <li>The current score of both players</li>
+                                    <li>The price of a new ant</li>
+                                    <li>Some data that can be used to store information between rounds</li>
+                                </ul>
+                            </p>
+                            <p>
+                                With this information, the players must decide for each ant if they want to:
+                                <ul>
+                                    <li>move it</li>
+                                    <li>stay and grab sugar (you can only grab sugar if you are on a sugar cube)</li>
+                                    <li>stay and deposit sugar (you can only deposit sugar at the base)</li>
+                                    <li>stay and do nothing</li>
+                                </ul>
+                            </p>
+                            <p>
+                                Legal moves are up, down, left, right and only one cell steps are allowed. Diagonal steps are not allowed. Players can also buy a new ant by adding an ant on an unoccupied square of the base (conditions: pos is on the base, carrying = False, move = "stay").
+                                <br>
+                                In the code you provide for your bot, no libraries can be imported, only vanilla Python is allowed.
+                            </p>
+                        </div>
+                        <h3>Combat</h3>
+                        <div class="m-3">
+                            <p>
+                                An ant can't step over another ant. If two enemy ants walk on the same cell at the same time, one of them will kill the other, with a 50% chance. This scenario can't happen with friendly ants, since it would be considered an illegal move.
+                            </p>
+                        </div>
+                        <h3>Sugar Cubes</h3>
+                        <div class="m-3">
+                            <p>
+                                To collect sugar, you need to stay one round on a sugar cube and switch the carrying variable from False to True. To deposit sugar, you need to stay one round on the base and switch the carrying variable from True to False. Switching the carrying variable in any other way will result in a illegal move. Trying to pickup sugar from an empty cube will also result in an illegal move.
+                                <br>
+                                Sugar cubes are discovered if an ant steps on an adjacent cell. All sugar cubes have the same amount of sugar to start with. This amount can change from one game to another.
+                            </p>
+                        </div>
+                        <h3>Illegal moves</h3>
+                        <div class="m-3">
+                            <p>
+                                Any illegal move leads to immediate defeat. If both players make an illegal move at the same time, it's a draw. Illegal moves are :
+                                <ul>
+                                    <li>Moves in a unauthorized direction</li>
+                                    <li>Moving on the ennemy base</li>
+                                    <li>Changing the carrying variable in an unauthorized way</li>
+                                    <li>Moving two friendly ants on the same cell</li>
+                                </ul>
+                            </p>
+                        </div>
+                        <h3>Data formats</h3>
+                        <div class="m-3">
+                            <h4>Function structure</h4>
+                            <div class="m-3">
+                                <p>
+                                    Your function needs to have a specific structure in order for the game engine to be able to use it. A template is available on the different code submission pages. The function needs to be called "make_move", take one parameter (dictionary as described below in the "Input" section) and return on variable (dictionary as described below in the "Output" section).
+                                </p>
+                            </div>
+                            <h4>Input</h4>
+                            <div class="m-3">
+                                <p>
+                                    This is the data that will be passed to your function.
+                                </p>
+                                <p>
+                                    Example
+                                    <pre>
+{
+    "your_ants": [
+        {
+            "pos": (1, 1),
+            "last_pos": (1, 0),
+            "carrying": False,
+            "last_carrying": False
+
+        },
+        {
+            "pos": (1, 0),
+            "last_pos": (1, 0),
+            "carrying": True
+            "last_carrying": False
+        }
+    ],
+    "opponent_ants": [
+        {
+            "pos": (5, 3),
+            "last_pos": (5, 3),
+            "carrying": False
+            "last_carrying": False
+
+        }
+    ],
+    "discovered_cubes": [
+        {
+            "pos": (1, 0),
+            "sugar": 5
+        } 
+    ],
+    "total_sugar_available": 68,
+    "grid_size": 16,
+    "your_score": 7,
+    "opponent_score": 9,
+    "ant_cost": 2,
+    "player_data": b"AAAAAAAAAAAA"
+}
+                                    </pre>
+                                    <ul>
+                                        <li>
+                                            <i>your_ants</i>:
+                                            <ul>
+                                                <li><strong>list</strong> containing the information of your ants</li>
+                                                <li>
+                                                    <i>your_ants.pos</i>:
+                                                    <ul>
+                                                        <li><strong>tuple of two integers</strong> (x, y) representing the position of the ant on the grid</li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <i>your_ants.last_pos</i>:
+                                                    <ul>
+                                                        <li><strong>tuple of two integers</strong> (x, y) representing the position of the ant on the grid one round ago</li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <i>your_ants.carrying</i>:
+                                                    <ul>
+                                                        <li>
+                                                            <strong>boolean</strong>, True if the ant is carrying sugar, False otherwise
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <i>your_ants.last_carrying</i>:
+                                                    <ul>
+                                                        <li>
+                                                            <strong>boolean</strong>, True if the ant was carrying sugar one round ago, False otherwise
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <i>opponent_ants</i>:
+                                            <ul>
+                                                <li><strong>list</strong> containing the information of your ants</li>
+                                                <li>
+                                                    <i>opponent_ants.pos</i>:
+                                                    <ul>
+                                                        <li><strong>tuple of two integers</strong> (x, y) representing the position of the ant on the grid</li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <i>opponent_ants.last_pos</i>:
+                                                    <ul>
+                                                        <li><strong>tuple of two integers</strong> (x, y) representing the position of the ant on the grid one round ago</li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <i>opponent_ants.carrying</i>:
+                                                    <ul>
+                                                        <li>
+                                                            <strong>boolean</strong>, True if the ant is carrying sugar, False otherwise
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <i>opponent_ants.last_carrying</i>:
+                                                    <ul>
+                                                        <li>
+                                                            <strong>boolean</strong>, True if the ant was carrying sugar one round ago, False otherwise
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <i>discovered_cubes</i>
+                                            <ul>
+                                                <li><strong>list</strong> containing the positions of the discovered sugar cubes</li>
+                                                <li>
+                                                    <i>discovered_cubes.pos</i>:
+                                                    <ul>
+                                                        <li><strong>tuple of two integers</strong> (x, y) representing the position of the sugar cube on the grid</li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <i>discovered_cubes.sugar</i>
+                                                    <ul>
+                                                        <li><strong>integer</strong> representing the amount of sugar available on the sugar cube</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <i>total_sugar_available</i>
+                                            <ul>
+                                                <li><strong>integer</strong> representing the total amount of sugar available on the board</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <i>grid_size</i>
+                                            <ul>
+                                                <li><strong>integer</strong> representing the size of the grid</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <i>your_score</i>
+                                            <ul>
+                                                <li><strong>integer</strong> representing the amount of sugar you have brought back to your base</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <i>opponent_score</i>
+                                            <ul>
+                                                <li><strong>integer</strong> representing the amount of sugar the opponent has brought back to their base</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <i>ant_cost</i>
+                                            <ul>
+                                                <li><strong>integer</strong> representing the amount of sugar needed to create a new ant</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <i>player_data</i>
+                                            <ul>
+                                                <li><strong>bytes</strong> representing the data of the player. This data is not used in the game, but can be used to store information between rounds.</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </p>
+                            </div>
+                            <h4>Output</h4>
+                            <div class="m-3">
+                                <p>
+                                    This is the data that your function needs to return.
+                                    <br>
+                                    <strong>Warning:</strong> The ant positions need to be sent back in the exact same order as they were received.
+                                </p>
+                                <p>
+                                    Example
+                                    <pre>
+{
+    "your_ants": [
+        {
+            "pos": (1, 1),
+            "carrying": False,
+            "move": "down"
+
+        },
+        {
+            "pos": (1, 0),
+            "carrying": True,
+            "move": "left"
+        }
+    ],
+    "player_data": b"AAAAAAAAAAAA"
+}
+                                    </pre>
+                                    <ul>
+                                        <li>
+                                            <i>your_ants:</i>
+                                            <ul>
+                                                <li><strong>list</strong> containing the information of your ants</li>
+                                                <li>
+                                                    <i>your_ants.pos</i>:
+                                                    <ul>
+                                                        <li><strong>tuple of two integers</strong> (x, y) representing the position of the ant on the grid before moving</li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <i>your_ants.pos</i>:
+                                                    <ul>
+                                                        <li>
+                                                            <strong>boolean</strong>, True if the ant is carrying sugar, False otherwise
+                                                        </li>
+                                                        <li>this can only change state from False to True on a sugar cube and from True to False on the base. Otherwise, it will result in a defeat.</li>
+                                                        <li>trying to start carrying on an empty cube will result in a defeat.</li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <i>your_ants.move</i>:
+                                                    <ul>
+                                                        <li>
+                                                            <strong>string</strong> representing the move of the ant. It can be "up", "down", "left", "right" or "stay"
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <i>your_ants:</i>
+                                            <ul>
+                                                <li>
+                                                    <strong>bytes</strong> representing the data of the player. This data is not used in the game, but can be used to store information between rounds.
+                                                </li>
+                                                <li>This variable has to be 16 bytes at most.</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </body>
+</html>

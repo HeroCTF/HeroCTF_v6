@@ -1,0 +1,11 @@
+---
+version: "2.2"
+
+services:
+
+  complainio:
+    build:
+      context: ./challenge/
+    restart: always
+    ports:
+      - "3000:3000"

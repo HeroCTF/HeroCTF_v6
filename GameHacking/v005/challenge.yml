@@ -1,0 +1,40 @@
+name: "Giam v0.05"
+author: iHuggsy
+category: GameHacking
+description: "Patch notes : - Accelerated the server by threading actions ! Speed goes brr now (threads = speed)<br>
+- Added a hidden 'boon' system we think you'll like :)<br><br>At the binary location, create a file called 'realm' containing the ip and the port of the remote server deployed from the deployer.<br>Example: 127.0.0.1:4444<br><br> > Deploy on [deploy.heroctf.fr](https://deploy.heroctf.fr/)<br><br>
+Format : **Hero{flag}**<br> Author : **iHuggsy**"
+value: 0
+type: dynamic
+
+extra:
+    initial: 500
+    decay: 100
+    minimum: 50
+
+image: null
+host: null
+
+flags:
+    - {
+        type: "static",
+        content: "Hero{now_thats_a_game_hax0r}",
+        data: "case_insensitive",
+    }
+
+tags:
+    - hard
+    - gamehacking
+    - reverse 
+
+files:
+    - client/target/clientv005.exe
+
+requirements:
+    - "Giam v0.01"
+    - "Giam v0.02"
+    - "Giam v0.03"
+    - "Giam v0.04"
+
+state: visible
+version: "0.1"

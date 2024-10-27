@@ -1,0 +1,33 @@
+name: "Cloud Shell"
+author: "Worty"
+category: Misc
+description: "Cloud cloud cloud... always cloud, but with an access to a shell ? Such a great idea ! :D
+<br><br>
+SSH credentials: `restricted:restricted`<br><br>
+> Deploy on [deploy.heroctf.fr](https://deploy.heroctf.fr/)<br>
+<br>
+Format : **Hero{flag}**<br>
+Author : **Worty**"
+value: 0
+type: dynamic
+
+extra:
+    initial: 500
+    decay: 100
+    minimum: 50
+
+image: null
+host: null
+
+flags:
+    - {
+        type: "static",
+        content: "HERO{y0u_3sc4p3_fr0m_cl0ud_sh3ll_06b0c69c3a3ec4a56e761056a9e70d09}",
+        data: "case_insensitive",
+    }
+
+tags:
+    - hard
+
+state: visible
+version: "0.1"

@@ -1,0 +1,35 @@
+name: "Jinjatic"
+author: "Worty"
+category: Web
+description: "A platform that allows users to render welcome email's template for a given customer, sounds great no ?
+<br><br>
+> Deploy on [deploy.heroctf.fr](https://deploy.heroctf.fr/)<br>
+<br>
+Format : **Hero{flag}**<br>
+Author : **Worty**"
+value: 0
+type: dynamic
+
+extra:
+    initial: 500
+    decay: 100
+    minimum: 50
+
+image: null
+host: null
+
+flags:
+    - {
+        type: "static",
+        content: "HERO{f815460cee723a7d1ba1f0a70f68482c}",
+        data: "case_insensitive",
+    }
+
+tags:
+    - easy
+
+files:
+    - dist/jinjatic.tar.xz
+
+state: visible
+version: "0.1"

@@ -1,0 +1,35 @@
+name: "Under Construction"
+author: "Mizu"
+category: Web
+description: "Every piece has its purpose, and only when all are placed together does the full picture reveal itself.
+<br><br>
+URL : https://underconstruction.heroctf.fr:5200/<br>
+BOT : `echo http://URL | nc underconstruction.heroctf.fr 5201`<br>
+Format : **Hero{flag}**<br>
+Author : **Mizu**"
+value: 0
+type: dynamic
+
+extra:
+    initial: 500
+    decay: 100
+    minimum: 50
+
+image: null
+host: null
+
+flags:
+    - {
+        type: "static",
+        content: "HERO{decba0baaf8609d2ef72637c74de59c6}",
+        data: "case_insensitive",
+    }
+
+files:
+    - dist/under-construction.tar.xz
+
+tags:
+    - hard
+
+state: visible
+version: "0.1"

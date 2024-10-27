@@ -1,0 +1,35 @@
+name: "Tenant trouble"
+author: "Mallon"
+category: Forensics
+description: "
+  It seems that a user account has been compromised, could you identify the account in question and the start of the attack?<br><br>
+(The IP addresses in the file have been replaced by a random set of addresses, so don't try anything on these IP addresses)
+<br><br>
+sha256 : **3bfe375726cbae2ba4b74ede74e057f4777d80925650b899119fb27055d7c70a**<br>
+Format : **Hero{YYYY-MM-DD;jane.doe@company.com}**<br>
+Author : **Mallon**"
+value: 0
+type: dynamic
+
+extra:
+    initial: 500
+    decay: 100
+    minimum: 50
+
+image: null
+host: null
+
+flags:
+    - {
+        type: "static",
+        content: "HERO{2024-05-02;mister.bennet@winchester77.onmicrosoft.com}",
+        data: "case_insensitive",
+    }
+
+tags:
+    - easy
+
+files: 
+  - winchester77_signin_logs_2024.csv
+state: visible
+version: "0.1"

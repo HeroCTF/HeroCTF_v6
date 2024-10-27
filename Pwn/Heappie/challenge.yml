@@ -1,0 +1,34 @@
+name: "Heappie"
+author: xanhacks
+category: Pwn
+description: "Heappie is a simple application that allows you to save and play your favorite songs. Find a way to exploit it and read the flag.
+<br>
+nc pwn.heroctf.fr 6000
+Format : **Hero{flag}**<br>
+Author : **xanhacks**"
+value: 0
+type: dynamic
+
+extra:
+    initial: 500
+    decay: 100
+    minimum: 50
+
+image: null
+host: null
+
+flags:
+    - {
+        type: "static",
+        content: "Hero{b4s1c_H3AP_0verfL0w!47280319}",
+        data: "case_insensitive",
+    }
+
+tags:
+    - very easy 
+
+files:
+    - heappie.zip
+
+state: visible
+version: "0.1"

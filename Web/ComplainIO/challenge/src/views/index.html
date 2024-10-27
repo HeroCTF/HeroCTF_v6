@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ComplainIO - A platform for generating complaint templates</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">ComplainIO</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavUnauth" style="visibility: hidden;">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" type="button" data-toggle="modal" data-target="#loginModal">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" type="button" data-toggle="modal" data-target="#registerModal">Register</a>
+                </li>
+            </ul>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarNavAuth" style="visibility: hidden;">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/complain">Create a complaint report</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/profile">My profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick='localStorage.removeItem("token"); window.location.href="/";'>Logout</a>
+                </li>
+            </ul>
+        </div>
+        <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick='$("#usernameLogin").val("");$("#passwordLogin").val("");$("#msgLoginTxt").remove();'>
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                    <div id="msgLogin"></div>
+                    <form>
+                        <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" id="usernameLogin" placeholder="Enter your username" required>
+                        </div>
+                        <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="passwordLogin" placeholder="***********" required>
+                        </div>
+                        <button type="button" class="btn btn-primary btn-block" onclick="login()">Log in</button>
+                        <p>No account ? <a href="#" onclick='$("#loginModal").modal("hide");$("#registerModal").modal("show");'>Create one</a> !</p>
+                    </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="registerModalLabel">Register</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick='$("#emailRegister").val("");$("#usernameRegister").val("");$("#passwordRegister").val("");$("#firstname").val("");$("#lastname").val("");$("#msgRegisterTxt").remove();'>
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                    <div id="msgRegister"></div>
+                    <form>
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" class="form-control" id="usernameRegister" placeholder="Enter your username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="firstname">Firstname</label>
+                            <input type="text" class="form-control" id="firstname" placeholder="Enter your firstname" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastname">Lastname</label>
+                            <input type="text" class="form-control" id="lastname" placeholder="Enter your lastname" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="passwordRegister" placeholder="***********" required>
+                        </div>
+                        <button type="button" class="btn btn-primary btn-block" onclick="register()">Register</button>
+                        <p>Already have an account ? <a href="#" onclick='$("#registerModal").modal("hide");$("#loginModal").modal("show");'>Log in</a> !</p>
+                    </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="successRegisterModal" tabindex="-1" role="dialog" aria-labelledby="successRegisterModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="successRegisterModal">Youhou ! 🎉</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                    <p style="color: green;">Your account was created ! You can now log in to complain !</p>
+                </div>
+            </div>
+        </div>
+
+    </nav>
+
+    <!-- Contenu principal -->
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col text-center">
+                <h1>Welcome on ComplainIO</h1>
+                <p>Need to complain for a legitimate reason? Or just for the fun of it, because you're French? You've come to the right place !</p>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Lien vers le JS de Bootstrap et ses dépendances -->
+    <script src="/js/jquery-3.5.1.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+
+</html>

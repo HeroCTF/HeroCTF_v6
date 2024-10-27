@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Review</title>
+        <meta name="Antwars" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="static/style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.css"></link>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/theme/darcula.min.css"></link>
+        <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/edit/matchbrackets.min.js"></script>
+        <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/python/python.min.js"></script>
+    </head>
+    <body>
+        <div class="m-3">
+
+            <div class="container-fluid">
+                <div class="row justify-content-center h-100">
+                    <div class="col col-md-5">
+                        <div class="sticky-top">
+                            <p>
+                                You can use the Right and Left Arrowkeys to navigate between rounds.
+                            </p>
+                            <div id="grid" class="grid"></div>
+                            <br>
+                            <div class="d-flex align-items-center">
+                                <!-- Slider -->
+                                <input type="range" id="roundProgressBar" class="form-range me-3" min="0" max="0" value="0">
+                                
+                                <!-- Round number display -->
+                                <p class="mb-0 ml-2">
+                                    Round: <span id="roundNumber">0</span>/<span id="maxRoundNumber">0</span>
+                                </p>
+                            </div>
+                            Score: <span id="your_score"></span> | <span id="opponent_score"></span>
+                        </div>  
+                    </div>
+                    <div class="col col-md-7">
+                        <textarea id="code" name="code">REPLACE_ME_WITH_CODE</textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            function registerListener(gameData, grid_size) {
+                let currentRound = 0;
+                let gridSize = grid_size;
+
+                function previousRound() {
+                    if (currentRound > 0) {
+                        currentRound--;
+                        renderRound(currentRound);
+                    }
+                }
+
+                function nextRound() {
+                    if (currentRound < gameData.length - 1) {
+                        currentRound++;
+                        renderRound(currentRound);
+                    }
+                }
+
+                function setRound(round) {
+                    currentRound = round;
+                    renderRound(currentRound);
+                }
+
+                document.addEventListener("keydown", (event) => {
+                    if (event.key === "ArrowLeft") {
+                        previousRound();
+                    } else if (event.key === "ArrowRight") {
+                        nextRound();
+                    }
+                });
+
+                document.getElementById('roundProgressBar').addEventListener("input", (event) => {
+                    currentRound = event.target.value;
+                    renderRound(currentRound);
+                } )
+
+                window.addEventListener('resize', () => {
+                    renderRound(currentRound);
+                });
+
+                document.addEventListener("DOMContentLoaded", () => {
+                    renderRound(currentRound);
+                });
+
+                function renderRound(round) {
+                    const grid = document.getElementById('grid');
+                    grid.innerHTML = ''; // Clear the grid
+                    
+                    const gridContainerWidth = grid.offsetWidth;
+                    const gridContainerHeight = grid.offsetHeight;
+                    
+                    const cellSize = Math.min(
+                        gridContainerWidth / gridSize, 
+                        gridContainerHeight / gridSize
+                    );
+                    
+                    grid.style.gridTemplateColumns = `repeat(${gridSize}, ${cellSize}px)`;
+                    grid.style.gridTemplateRows = `repeat(${gridSize}, ${cellSize}px)`;
+                
+                    // Generate the grid cells
+                    for (let row = 0; row < gridSize; row++) {
+                        for (let col = 0; col < gridSize; col++) {
+                            const cell = document.createElement('div');
+                            cell.classList.add('cell');
+                            grid.appendChild(cell);
+                        }
+                    }
+                
+                    // Render sugar cubes
+                    gameData[round].cubes.forEach(cube => {
+                        const pos = cube.pos;
+                        const cell = grid.children[pos[1] * gridSize + pos[0]];
+                        const sugarImg = document.createElement('div');
+                        sugarImg.classList.add('sugar');
+                        
+                        if (cube.sugar > 0) {
+                            if (cube.discovered) {
+                                sugarImg.style.backgroundImage = "url(static/images/sugar/sugar_discovered.svg)";
+                            } else {
+                                sugarImg.style.backgroundImage = "url(static/images/sugar/sugar.svg)";
+                            }
+                            sugarImg.innerHTML = cube.sugar;
+                        }
+                
+                        cell.appendChild(sugarImg);
+                    });
+                
+                    // Render player1 ants
+                    gameData[round].player1.forEach(p => {
+                        const pos = p.pos;
+                        const cell = grid.children[pos[1] * gridSize + pos[0]];
+                        const antImg = document.createElement('div');
+                        antImg.classList.add('ant');
+                
+                        if (p.carrying) {
+                            antImg.style.backgroundImage = "url(static/images/ants/ant_green_carrying.svg)";
+                        } else {
+                            antImg.style.backgroundImage = "url(static/images/ants/ant_green.svg)";
+                        }
+                
+                        cell.appendChild(antImg);
+                    });
+                
+                    // Render player2 ants
+                    gameData[round].player2.forEach(p => {
+                        const pos = p.pos;
+                        const cell = grid.children[pos[1] * gridSize + pos[0]];
+                        const antImg = document.createElement('div');
+                        antImg.classList.add('ant');
+                
+                        if (p.carrying) {
+                            antImg.style.backgroundImage = "url(static/images/ants/ant_red_carrying.svg)";
+                        } else {
+                            antImg.style.backgroundImage = "url(static/images/ants/ant_red.svg)";
+                        }
+                
+                        cell.appendChild(antImg);
+                    });
+                
+                    // Update round and score display
+                    document.getElementById("roundProgressBar").value = round;
+                    document.getElementById('roundNumber').textContent = round;
+                    document.getElementById('your_score').textContent = gameData[round].score[0];
+                    document.getElementById('opponent_score').textContent = gameData[round].score[1];
+                }
+                
+                
+            }
+
+            //const staticUrls = {{ static_urls|tojson }};
+
+            editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+                lineNumbers: true,
+                mode: 'text/x-python',
+                matchBrackets: true,
+                theme: 'darcula',
+                autofocus: false,
+                readOnly: true,
+                cursorHeight: 0,
+                indentUnit: "    "
+            });
+
+            var game_data = REPLACE_ME_WITH_GAME_DATA
+            var grid_size = REPLACE_ME_WITH_GRID_SIZE
+
+            document.getElementById('maxRoundNumber').textContent = game_data.length
+            document.getElementById("roundProgressBar").max = game_data.length
+
+            registerListener(game_data, grid_size)
+        </script>
+    </body>
+</html>

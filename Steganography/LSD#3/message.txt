@@ -1,0 +1,1 @@
+Steganography is the technique of concealing sensitive information in a seemingly innocuous cover medium. Here is your flag: Hero{L5B_D14G0N4L3}

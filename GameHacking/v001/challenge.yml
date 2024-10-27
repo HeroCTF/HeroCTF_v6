@@ -1,0 +1,37 @@
+name: "Giam v0.01"
+author: iHuggsy
+category: GameHacking
+description: "I made a Game. The manual ? The code. GLHF.<br>
+Finish the game in order to get the flag.
+
+Format : **Hero{flag}**<br>
+Author : **iHuggsy**"
+value: 0
+type: dynamic
+
+extra:
+    initial: 500
+    decay: 100
+    minimum: 50
+
+image: null
+host: null
+
+flags:
+    - {
+        type: "static",
+        content: "Hero{&1Kb,6Kb08Lb-3Jb}",
+        data: "case_insensitive",
+    }
+
+tags:
+    - easy 
+    - gamehacking
+    - reverse
+
+files:
+    - client/target/clientv001.exe    
+    - client/assets.zip
+
+state: visible
+version: "0.1"

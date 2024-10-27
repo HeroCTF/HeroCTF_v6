@@ -1,0 +1,7 @@
+LISTEN_PORT=8080
+CTFD=https://ctf.heroctf.fr
+PLATEFORM=http://antwarz.heroctf.fr
+FLAG1=Hero{00ace8b68a3879022ed7b05349276445}
+FLAG2=Hero{4a2f05023630b7501944632bad98c103}
+CHALLENGE1=Antwarz PVE - Easy
+CHALLENGE2=Antwarz PVE - Medium

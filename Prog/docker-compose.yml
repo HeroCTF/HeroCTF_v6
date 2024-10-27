@@ -1,0 +1,24 @@
+services:
+
+  antwarz_app:
+      build:
+        context: ./antwarz1
+      hostname: antwarz-app
+      container_name: antwarz-app
+      read_only: false
+      restart: unless-stopped
+      ports:
+        - 8080:8080
+        - 80:80
+      environment:
+        - LISTEN_PORT=8080
+      # volumes:
+      # - antwarz_volume:/app/
+      deploy:
+        resources:
+          limits:
+            cpus: 4.0
+            memory: 4096M
+
+# volumes:
+#   antwarz_volume:

@@ -1,0 +1,30 @@
+name: "Redmond Intrusion"
+author: "Mallon"
+category: Forensics
+description: "TODO
+<br><br>
+Format : **Hero{flag}**<br>
+Author : **Mallon**"
+value: 0
+type: dynamic
+
+extra:
+    initial: 500
+    decay: 100
+    minimum: 50
+
+image: null
+host: null
+
+flags:
+    - {
+        type: "static",
+        content: "HERO{changeme}",
+        data: "case_insensitive",
+    }
+
+tags:
+    - medium
+
+state: hidden
+version: "0.1"

@@ -1,0 +1,34 @@
+name: "SampleHub"
+author: "Mizu"
+category: Web
+description: "Discover SampleHub, the ultimate online repository for accessing a vast collection of sample files. With user-friendly navigation, and robust search features, SampleHub makes it easy to browse, access, and download files efficiently.
+<br><br>
+URL : http://web.heroctf.fr:5300/<br>
+Format : **Hero{flag}**<br>
+Author : **Mizu**"
+value: 0
+type: dynamic
+
+extra:
+    initial: 500
+    decay: 100
+    minimum: 50
+
+image: null
+host: null
+
+flags:
+    - {
+        type: "static",
+        content: "HERO{977c1e73e5398ca305e17271847164fe}",
+        data: "case_insensitive",
+    }
+
+tags:
+    - easy
+
+files:
+    - dist/samplehub.tar.xz
+
+state: visible
+version: "0.1"

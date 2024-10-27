@@ -1,0 +1,35 @@
+name: "Telechat"
+author: "Worty"
+category: Web
+description: "Telechat is a revolutionary electron application that lets you talk live with AIs. Need help? Report it to our superior AI, who'll take care of it - no more humans, no more problems?<br>
+PS: You will find enclosed with this challenge an explanatory note for deployment.<br><br>
+> Solve the challenge locally, then open a ticket and admins will spawn a VM for you.<br>
+<br>
+Format : **Hero{flag}**<br>
+Author : **Worty**"
+value: 0
+type: dynamic
+
+extra:
+    initial: 500
+    decay: 100
+    minimum: 50
+
+image: null
+host: null
+
+flags:
+    - {
+        type: "static",
+        content: "HERO{5b1e21cc75c06c4a8d37e62939823a73}",
+        data: "case_insensitive",
+    }
+
+tags:
+    - very hard
+
+files:
+    - dist/telechat.tar.xz
+
+state: visible
+version: "0.1"

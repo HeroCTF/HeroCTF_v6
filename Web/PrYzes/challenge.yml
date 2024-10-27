@@ -1,0 +1,34 @@
+name: "PrYzes"
+author: "xanhacks"
+category: Web
+description: "A Python enthusiast created a website to distribute prizes, but currently, you are unable to claim them. Discover a method to successfully claim a prize and obtain the flag!
+<br><br>
+URL : **http://web.heroctf.fr:5000**<br>
+Format : **Hero{flag}**<br>
+Author : **xanhacks**"
+value: 0
+type: dynamic
+
+extra:
+    initial: 500
+    decay: 100
+    minimum: 50
+
+image: null
+host: null
+
+flags:
+    - {
+        type: "static",
+        content: "Hero{PrYzes_4r3_4m4z1ng!!!9371497139}",
+        data: "case_insensitive",
+    }
+
+tags:
+    - very easy
+
+files:
+    - PrYzes.zip
+
+state: visible
+version: "0.1"

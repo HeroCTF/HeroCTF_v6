@@ -1,0 +1,43 @@
+services:
+
+  # ===== INTERPOLATION ====
+  interpolation:
+    build:
+      context: ./Interpolation/
+      dockerfile: Dockerfile
+    container_name: interpolation
+    restart: unless-stopped
+    ports:
+      - "9000:9000"
+    mem_limit: 512m
+    cpus: 0.5
+    read_only: false
+    environment:
+      - LISTEN_PORT=9000
+    networks:
+      - interpolation_net
+
+  # ===== HALLOWEEN ====
+  halloween:
+    build:
+      context: ./Halloween/
+      dockerfile: Dockerfile
+    container_name: halloween
+    restart: unless-stopped
+    ports:
+      - "9001:9001"
+    mem_limit: 512m
+    cpus: 0.5
+    read_only: false
+    environment:
+      - LISTEN_PORT=9001
+    networks:
+      - halloween_net
+
+
+networks:
+  interpolation_net:
+    driver: bridge
+  halloween_net:
+    driver: bridge
+

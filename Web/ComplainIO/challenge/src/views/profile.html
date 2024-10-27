@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ComplainIO - A platform for generating complaint templates</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">ComplainIO</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAuth">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Back to home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/complain">Create a complaint report</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">My profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick='localStorage.removeItem("token"); window.location.href="/";'>Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col text-center">
+                <h1>Your ComplainIO profile</h1>
+            </div>
+        </div>
+        <div class="card profile-card">
+            <div class="card-body">
+                <img src="" alt="No profile picture, click here to upload one." class="profile-img" id="pp" style="border-radius: 50%;" onclick="$('input[type=file]').trigger('click');">
+                <h3 class="card-title"></h3>
+                <form>
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" id="username" value="" required readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="firstname">Firstname</label>
+                        <input type="text" class="form-control" id="firstname" value="" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastname">Lastname</label>
+                        <input type="text" class="form-control" id="lastname" value="" required>
+                    </div>
+                    <input type="hidden" id="user_id" required>
+                    <button type="button" class="btn btn-primary" onclick="save()">Save</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="modal fade" id="unexceptErrorModal" tabindex="-1" role="dialog" aria-labelledby="unexceptErrorModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="unexceptErrorModalLabel">UhOh.. ❌</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p style="color: red;" id="error_content"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="errorModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="errorModalLabel">UhOh.. ❌</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p id="errorTxt" style="color: red;"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="successModalLabel">We've taken the changes into account! 😊</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p style="color: green;">Everything is ready for you to complain !</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="/js/jquery-3.5.1.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/profile.js"></script>
+    
+    <!-- Div use for file upload -->
+    <div style="visibility: hidden;">
+        <form method="POST" enctype="multipart/form-data" id="form_picture" action="/api/upload">
+            <input type="file" id="picture" name="picture"/>
+            <input type="text" id="token" name="token"/>
+        </form>
+    </div>
+</body>
+
+</html>

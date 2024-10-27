@@ -1,0 +1,48 @@
+name: "LazySysAdmin #1"
+author: "Mallon"
+category: Misc
+description: "
+Your system administrator calls you, all worried, he's just observed some strange behavior: the server he was connected on has suddenly shut down. After some questioning, you realize that he's been browsing on a suspicious wesite. You decide to inspect the website yourself. Will you be able to find the root of your problems ?
+Once you've found it, base64 the malicious charge.
+<br><br>
+URL: **http://misc.heroctf.fr:8085**<br><br>
+Format : **HERO{base64(malicious charge)}**  (no case-sensitive)<br>
+Example : **HERO{YmFzZTY0IDQgbGlmZS4=}**<br>
+Author : **Mallon**"
+value: 0
+type: dynamic
+
+extra:
+    initial: 500
+    decay: 100
+    minimum: 50
+
+image: null
+host: null
+
+flags:
+    - {
+        type: "static",
+        content: "HERO{Y3VybCAtcyBodHRwczovL2dob3N0YmluLnNpdGUvNnk2NWwvcmF3IHwgYmFzaCAmJiBzbGVlcCAyICYmIHJlYm9vdCAtZgo=}",
+        data: "case_insensitive",
+    }
+    - {
+        type: "static",
+        content: "HERO{Y3VybCAtcyBodHRwczovL2dob3N0YmluLnNpdGUvNnk2NWwvcmF3IHwgYmFzaCAmJiBzbGVlcCAyICYmIHJlYm9vdCAtZg==}",
+        data: "case_insensitive",
+    }
+    - {
+        type: "static",
+        content: "HERO{Y3VybCAtcyBodHRwczovL2dob3N0YmluLnNpdGUvNnk2NWwvcmF3IHwgYmFzaCAmJiBzbGVlcCAyICYmIHJlYm9vdCAtZgoK}",
+        data: "case_insensitive",
+    }
+    - {
+        type: "static",
+        content: "HERO{Y3VybCAtcyBodHRwczovL2dob3N0YmluLnNpdGUvNnk2NWwvcmF3IHwgYmFzaCAmJiBzbGVlcCAyICYmIHJlYm9vdCAtZgo}",
+        data: "case_insensitive",
+    }
+tags:
+    - easy
+
+state: visible
+version: "0.1"

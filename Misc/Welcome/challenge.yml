@@ -1,0 +1,30 @@
+name: "Welcome"
+author: "@everyone"
+category: Welcome
+description: "Read the rules & pwn challenges
+<br><br>
+Format : **Hero{flag}**<br>
+Author : **@everyone**"
+value: 0
+type: dynamic
+
+extra:
+    initial: 500
+    decay: 100
+    minimum: 50
+
+image: null
+host: null
+
+flags:
+    - {
+        type: "static",
+        content: "Hero{W3_h0p3_U_l1k3d_th3_typ1ng_3ff3ct}",
+        data: "case_insensitive",
+    }
+
+tags:
+    - easy
+
+state: visible
+version: "0.1"

@@ -1,0 +1,37 @@
+name: "Under Construction Revenge"
+author: "Mizu"
+category: Web
+description: "Every piece has its purpose, and only when all are placed together does the full picture reveal itself.
+<br><br>
+Hit: Due to a bypass discovered in the second half of the challenge by @BitK_, we have released a fixed version. Updated sources are also provided to give some hints about what was found.
+<br><br>
+URL : https://underconstruction-revenge.heroctf.fr:5400/<br>
+BOT : `echo http://URL | nc underconstruction-revenge.heroctf.fr 5401`<br>
+Format : **Hero{flag}**<br>
+Author : **Mizu**"
+value: 0
+type: dynamic
+
+extra:
+    initial: 250
+    decay: 100
+    minimum: 50
+
+image: null
+host: null
+
+flags:
+    - {
+        type: "static",
+        content: "HERO{ff692da4e0d215a3874dbf478c2ab1d5}",
+        data: "case_insensitive",
+    }
+
+files:
+    - dist/under-construction-revenge.tar.xz
+
+tags:
+    - very hard
+
+state: visible
+version: "0.1"
