@@ -4,7 +4,7 @@ category: Forensics
 description: "You have identified the malicious load, it seems, that a script was executed before the computer turns off, you made a copy of the disk and you start investigating to understand the \"extent of the damage\"
 <br><br>
 URL: **https://mega.nz/file/TNp11ZTb#yuC0rnLYZIMkcdElRXFQvbCzKjnIUZH7JRjaM4g4NZQ** <br><br>
-Fingerprint (sha256):
+Fingerprint (sha256): eb135b3db3efe64220753c2b6495cc30bd51a1fa0268d1b7074323c91e872492
 
 Format : **HERO{flag}**<br>
 Author : **Mallon**"
@@ -32,5 +32,5 @@ tags:
 requirements:
     - "LazySysAdmin #1"
 
-state: hidden
+state: visible
 version: "0.1"

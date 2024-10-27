@@ -1,3 +1,0 @@
-# Redmond Intrusion 
-
-TODO
