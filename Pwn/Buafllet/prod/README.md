@@ -92,9 +92,77 @@ static __always_inline __alloc_size(1) void *kmalloc(size_t size, gfp_t flags)
 }
 ```
 
-We can see in (2) that this is the part where the RANDOM_KMALLOC_CACHE takes place, since it will allocate on a random cache.
-But, just before, in (1) we have this little snippet which does a kmalloc_large and doesn't seems to take random cache in count.
+We can see in (2) that this is the part where the RANDOM_KMALLOC_CACHE takes place, since it will allocate on a random cache, using `_RET_IP_`.
 
+```c
+static __always_inline enum kmalloc_cache_type kmalloc_type(gfp_t flags, unsigned long caller)
+{
+	if (likely((flags & KMALLOC_NOT_NORMAL_BITS) == 0))
+#ifdef CONFIG_RANDOM_KMALLOC_CACHES
+		/* RANDOM_KMALLOC_CACHES_NR (=15) copies + the KMALLOC_NORMAL */
+		return KMALLOC_RANDOM_START + hash_64(caller ^ random_kmalloc_seed,
+						      ilog2(RANDOM_KMALLOC_CACHES_NR + 1));
+#else
+		return KMALLOC_NORMAL;
+
+	// [...]
+}
+```
+
+But, just before, in (1), we have this little snippet which does a kmalloc_large and doesn't seems to take random cache in count. This part of the code is reached if `size > KMALLOC_MAX_CACHE_SIZE`.
+
+```c
+void *kmalloc_large(size_t size, gfp_t flags)
+{
+	void *ret = __kmalloc_large_node(size, flags, NUMA_NO_NODE);
+
+	trace_kmalloc(_RET_IP_, ret, size, PAGE_SIZE << get_order(size),
+		      flags, NUMA_NO_NODE);
+	return ret;
+}
+```
+
+```c
+/*
+ * To avoid unnecessary overhead, we pass through large allocation requests
+ * directly to the page allocator. We use __GFP_COMP, because we will need to
+ * know the allocation order to free the pages properly in kfree.
+ */
+
+static void *__kmalloc_large_node(size_t size, gfp_t flags, int node)
+{
+	struct page *page;
+	void *ptr = NULL;
+	unsigned int order = get_order(size);
+
+	if (unlikely(flags & GFP_SLAB_BUG_MASK))
+		flags = kmalloc_fix_flags(flags);
+
+	flags |= __GFP_COMP;
+	page = alloc_pages_node(node, flags, order);
+	if (page) {
+		ptr = page_address(page);
+		mod_lruvec_page_state(page, NR_SLAB_UNRECLAIMABLE_B,
+				      PAGE_SIZE << order);
+	}
+
+	ptr = kasan_kmalloc_large(ptr, size, flags);
+	/* As ptr might get tagged, call kmemleak hook after KASAN. */
+	kmemleak_alloc(ptr, size, 1, flags);
+	kmsan_kmalloc_large(ptr, size, flags);
+
+	return ptr;
+}
+```
+
+With this in hand, we can try something.
+
+First, kmalloc more than 0x2000 to go in the interesting part, using `ioctl_get_builet`.
+Next, kfree it, with `ioctl_shoot`.
+Now, you can spray with any object it will ends in the chunk.
+The rest is straightfoward, using a "good" object, we leak kaslr, heap address and gain arbitrary read/write to patch creds, or using modprobe_path.
+
+The object choosen in the PoC [exploit.c](exploit/exploit.c) is tty_struct, since it's very simple. But any other techniques works also.
 
 
 
