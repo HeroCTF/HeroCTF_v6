@@ -38,8 +38,8 @@ Github : https://github.com/HeroCTF
 | [Landscape](./Reverse/Landscape/)                                   | Reverse       | xanhacks        | Medium      |  ✅     |
 | [Lebarnol](./Steganography/Lebarnol)                                | Steganography | Thibz           | Easy        |  ✅     |
 | [Zipper](./Steganography/Zipper/)                                   | Steganography | Thibz           | Easy        |  ✅     |
-| [LSD#3](./Steganography/LSD#3)                                      | Steganography | Thibz           | Medium      |  ✅     |
-| [Subliminal#3](./Steganography/Subliminal#3)                        | Steganography | Thibz           | Medium      |  ✅     |
+| [LSD#3](./Steganography/LSD%233)                                      | Steganography | Thibz           | Medium      |  ✅     |
+| [Subliminal#3](./Steganography/Subliminal%233)                        | Steganography | Thibz           | Medium      |  ✅     |
 | [Heappie](./Pwn/Heappie/)                                           | Pwn           | xanhacks        | Very Easy   |  ✅     |
 | [BankRupst](./Pwn/BankRupst)                                        | Pwn           | ghizmo          | Easy        |  ✅     |
 | [Buafllet](./Pwn/Buafllet)                                          | Pwn           | ghizmo          | Hard        |  ✅     |
@@ -55,11 +55,11 @@ Github : https://github.com/HeroCTF
 | [Transformers 2](./Forensics/Transformers_2)                        | Forensics     | Mallon          | Medium      |  ✅     |
 | [Tenant trouble](./Forensics/Tenant_trouble)                        | Forensics     | Mallon          | Easy        |  ✅     |
 | [Lazy SysAdmin 1](./Misc/LazySysAdmin_1)                            | Misc          | Mallon          | Easy        |  ✅     |
-| [Lazy SysAdmin 2](./Forensics/LazySysAdmin_2)                       | Forensics     | Mallon          | Medium      |  ✅     |
-| [Giam (v0.01)](./GameHacking/Giam_v01)                              | Game Hacking  | iHuggsy         | Easy        |  ✅     |
-| [Giam (v0.02)](./GameHacking/Giam_v02)                              | Game Hacking  | iHuggsy         | Medium      |  ✅     |
-| [Giam (v0.03)](./GameHacking/Giam_v03)                              | Game Hacking  | iHuggsy         | Medium      |  ✅     |
-| [Giam (v0.04)](./GameHacking/Giam_v04)                              | Game Hacking  | iHuggsy         | Hard        |  ✅     |
-| [Giam (v0.05)](./GameHacking/Giam_v05)                              | Game Hacking  | iHuggsy         | Hard        |  ✅     |
+| [Lazy SysAdmin 2](./Forensics/LazySysAdmin2)                       | Forensics     | Mallon          | Medium      |  ✅     |
+| [Giam (v0.01)](./GameHacking/v001)                              | Game Hacking  | iHuggsy         | Easy        |  ✅     |
+| [Giam (v0.02)](./GameHacking/v002)                              | Game Hacking  | iHuggsy         | Medium      |  ✅     |
+| [Giam (v0.03)](./GameHacking/v003)                              | Game Hacking  | iHuggsy         | Medium      |  ✅     |
+| [Giam (v0.04)](./GameHacking/v004)                              | Game Hacking  | iHuggsy         | Hard        |  ✅     |
+| [Giam (v0.05)](./GameHacking/v005)                              | Game Hacking  | iHuggsy         | Hard        |  ✅     |
 
 > Icons: ✅🚧❌
