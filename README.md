@@ -54,10 +54,8 @@ Github : https://github.com/HeroCTF
 | [Transformers 1](./Forensics/Transformers_1)                        | Forensics     | Mallon          | Easy        |  ✅     |
 | [Transformers 2](./Forensics/Transformers_2)                        | Forensics     | Mallon          | Medium      |  ✅     |
 | [Tenant trouble](./Forensics/Tenant_trouble)                        | Forensics     | Mallon          | Easy        |  ✅     |
-| [Tenant trouble 2](./Forensics/Tenant_trouble)                      | Forensics     | Mallon          | Medium      |  ✅     |
 | [Lazy SysAdmin 1](./Misc/LazySysAdmin_1)                            | Misc          | Mallon          | Easy        |  ✅     |
 | [Lazy SysAdmin 2](./Forensics/LazySysAdmin_2)                       | Forensics     | Mallon          | Medium      |  ✅     |
-| [Redmond Intrusion](./Forensics/Redmond_Intrusion)                  | Forensics     | Mallon          | Medium      |  ✅     |
 | [Giam (v0.01)](./GameHacking/Giam_v01)                              | Game Hacking  | iHuggsy         | Easy        |  ✅     |
 | [Giam (v0.02)](./GameHacking/Giam_v02)                              | Game Hacking  | iHuggsy         | Medium      |  ✅     |
 | [Giam (v0.03)](./GameHacking/Giam_v03)                              | Game Hacking  | iHuggsy         | Medium      |  ✅     |
